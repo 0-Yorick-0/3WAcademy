@@ -1,0 +1,123 @@
+<?php
+  include_once 'function_traducteur.php';
+ ?>
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Traducteur</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/trad_style.css">
+  </head>
+  <body>
+
+    <!-- ## Enoncé
+
+Créer un programme avec un formulaire permettant de traduire des mots français vers de l'anglais et inversement.
+
+## Consignes
+
+### PHTML
+
+Dans l'en-tête du template :
+
+- Ajouter un titre au programme : "Traducteur Anglais - Français".
+
+Dans la partie principale du template :
+
+- Si le programme a démarré il n'y a pas de résultat, il faut donc afficher un formulaire pour configurer le programme, sinon il faut afficher le résultat en question.
+
+Dans le formulaire de configuration :
+
+- Ajouter un champ de saisie texte pour le mot (*name : word*).
+- Ajouter une liste déroulante pour le sens de traduction (*name : direction*), avec deux options "français vers anglais" (*value : toEnglish*) et "anglais vers français" (*value : toFrench*).
+- Ajouter un bouton de soumission du formulaire pour traduire le mot saisi.
+- Le formulaire déclenche une requête *HTTP POST* vers le programme *PHP*.
+
+### PHP
+
+- Créer une fonction *translate()* recevant le mot et le sens de traduction en argument et construire le code de traduction à l'intérieur, le résultat est renvoyé au code appelant (le code principal).
+- Dans le code principal il faut récupérer les données du formulaire et appeler correctement la fonction *translate()* puis afficher le template *PHTML*.
+
+## Remarques
+
+- Utiliser systématiquement la syntaxte alternative *PHP* dans les templates *PHTML*, en refermant la balise *PHP* chaque fois en bout de ligne.
+- On doit pouvoir saisir le mot en majuscules comme en minuscules.
+- On doit gérer le cas où le mot demandé est inconnu.
+- Il n'y a qu'une seule variable contenant l'ensemble du dictionnaire, comment le construire ?
+- Que se passe-t'il en *PHP* si le formulaire déclenche une requête *HTTP GET* ? Quel intérêt de faire un formulaire en *HTTP GET* ? -->
+
+
+    <header class="container-fluid">
+
+      <h1 class="text-center">Traductor de la Meurt</h1>
+
+    </header>
+
+    <main class="container">
+      <div class="row">
+        <div class="col-md-6 col-md-push-2">
+
+         <form method="post" action="traducteur.phtml">
+
+           <div class="form-group">
+             <label for="exampleInputEmail1">Tapez un mot : </label>
+             <input type="text" class="form-control" id="mot" placeholder="<?php if(!empty($_POST['mot'])){
+               echo $_POST['mot'];
+             }else{
+               echo 'tapez votre mot...';
+             }?>" name="mot">
+           </div>
+
+           <div class="form-group">
+
+             <select class="form-control" name="sens">
+               <option value="toEng" >Français -> Anglais</option>
+               <option value="toFr">Anglais -> Français</option>
+             </select>
+
+           </div>
+
+           <?php if($retour !== 'empty') :?>
+             <div class="panel panel-success">
+              <div class="panel-body">
+                <?php
+                  if ($retour == 'empty'):?>
+                    <p>Faudrait peut-être rentrer un mot mon canard...</p>
+                  <?php elseif ($retour == 'false'):?>
+                    <p>Désolé, ce mot n'existe pas dans mon dico</p>
+                  <?php else:
+                     echo $retour;
+                 endif;?>
+              </div>
+            </div>
+          <?php endif;?>
+
+           <button type="submit" class="btn btn-default">Submit</button>
+         </form>
+        </div>
+      </div>
+    </main>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  </body>
+</html>

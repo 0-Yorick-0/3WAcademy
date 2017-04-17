@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="utf-8" />
+	<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script src="https://use.fontawesome.com/5039eb5c37.js"></script>
+	 <link href="https://fonts.googleapis.com/css?family=Courgette|Open+Sans" rel="stylesheet" /> 
+	<title>Module 6 - Ila Yoga</title>
+</head>
+<body>
+
+	<div id="wrapper">
+		
+		<header>
+			<nav>
+					<a href="#agenda">
+						<i class="fa fa-calendar" aria-hidden="true"></i>
+						Agenda
+					</a>
+					<a href="#livre">
+						<i class="fa fa-book" aria-hidden="true"></i>
+						Livre d'or
+					</a>
+					<a href="#albumPhoto">
+						<i class="fa fa-picture-o" aria-hidden="true"></i>
+						Album Photo
+					</a>
+					<a href="../module_6/index.html">
+						<i class="fa fa-envelope" aria-hidden="true"></i>
+						Nous contacter
+					</a>
+			</nav>
+			
+			<div id="promo">OFFRE PROMO : Votre dernier cours gratuit !</div>
+			<h1>Bienvenue sur le site d'Ila Yoga</h1>
+		
+		</header>
+
+		<main>
+			<section>
+			<h2>Réserver vot place pour le prochain cours de Yoga du rire !</h2>
+				<table>
+				<caption>Yoga du rire avec Jacqueline (Paris)</caption>					
+					<tr>
+						<td>05 janvier 2016</td>
+						<td>15h30</td>
+						<td><a href="#reserver">Réserver ce créneau</a></td>
+					</tr>
+					<tr>
+						<td>05 janvier 2016</td>
+						<td>15h30</td>
+						<td><a href="#reserver">Réserver ce créneau</a></td>
+					</tr>
+					<tr>
+						<td>05 janvier 2016</td>
+						<td>15h30</td>
+						<td><a href="#reserver">Réserver ce créneau</a></td>
+					</tr>
+					<tr>
+						<td>05 janvier 2016</td>
+						<td>15h30</td>
+						<td><a href="#reserver">Réserver ce créneau</a></td>
+					</tr>
+				</table>
+				<table>
+					<caption>Yoga du rire avec Roger (Marseille)</caption>
+					<tr>
+						<td>05 janvier 2016</td>
+						<td>15h30</td>
+						<td><a href="#reserver">Réserver ce créneau</a></td>
+					</tr>
+					<tr>
+						<td>05 janvier 2016</td>
+						<td>15h30</td>
+						<td><a href="#reserver">Réserver ce créneau</a></td>
+					<tr>
+						<td>05 janvier 2016</td>
+						<td>15h30</td>
+						<td><a href="#reserver">Réserver ce créneau</a></td>
+					</tr>
+					<tr>
+						<td>05 janvier 2016</td>
+						<td>15h30</td>
+						<td><a href="#reserver">Réserver ce créneau</a></td>
+					</tr>
+				</table>
+			</section>
+			<section>
+				<h2>Pour valider votre réservation, compléter ce formulaire :</h2>
+				<form method="post" action="traitement.php">
+					<fieldset>
+						<legend>Vos coordonnées</legend>
+						<div id="blocCoord">
+							<label for="prenom">Votre prénom :</label>
+							<input type="text" name="prenom" id="prenom" />
+							<label for="nom">Votre nom :</label>
+							<input type="text" name="nom" id="nom" />
+							<label for="mail">Votre mail :</label>
+							<input type="email" name="mail" id="mail" />
+						</div>
+					</fieldset>
+
+					<fieldset>
+						<legend> Quels sont les raisons de votre venue ?</legend>
+							<div id="blocRaison">
+								 <label for="detendre">Besoin de me détendre</label>
+								 <input type="checkbox" name="detendre" id="detendre" />
+								 <label for="detendre">Mon médecin m'a conseillé de venir</label>
+								<input type="checkbox" name="medecin" id="medecin" />
+								<label for="amis">Je veux tester avec des amis</label> 
+								<input type="checkbox" name="amis" id="amis" /> 
+							</div>
+					</fieldset>
+					<fieldset>
+						<legend>Voulez-vous souscrire à notre programme de fidélité ?</legend>
+							<div id="blocFidelite">
+								<label>Oui</label>
+								<input type="radio" name="raisons" value="oui" id="oui" />
+								<label>Non</label>
+								<input type="radio" name="raisons" value="non" id="non" />
+							</div>
+					</fieldset>
+					<fieldset>
+						<legend>Comment avez-vous connu Ila Yoga ?</legend>
+						<select>
+							<option value="internet">Par internet</option>
+							<option value="hasard">Par hasard</option>
+							<option value="Toutatis">Par Toutatis</option>
+						</select>
+					</fieldset>
+				
+					<input type="submit" value="Envoyer" id="boutton" />
+				</form>
+			</section>
+	
+			<footer>
+			<img src="img/3wa.png" alt="logo 3wa" />
+				<p>2016-3WA-Exercice 5 : Ila Yoga</p>
+			</footer>
+		</main>	
+	</div>
+</body>
+</html>

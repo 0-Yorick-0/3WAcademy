@@ -1,0 +1,51 @@
+<h2>Gestion administrateur</h2>
+
+<a href="add_post.php">Ajouter un nouvel article</a>
+
+<div class="row">
+  <div class="col-md-10">
+    <table class="table">
+      <caption class="text-center">Liste des articles</caption>
+      <thead>
+        <th>Titre</th>
+        <th>Contenu</th>
+        <th>Catégorie</th>
+        <th>Auteur</th>
+      </thead>
+
+      <tbody>
+        <?php foreach ($donnees as $key) :?>
+          <tr>
+            <td><?= $key['titre']?></td>
+            <td><?= $key['contenu']?></td>
+            <td><?= $key['categorie']?></td>
+            <td><?= $key['nom']?></td>
+            <td><a href="udpate_post.php?id=<?= $key['id']?>">Modifier</a></td>
+            <td><a href="delete_post.php?id=<?= $key['id']?>" data-toggle="modal" data-target="#myModal">Supprimer</a></td>
+          </tr>
+        <?php endforeach; ?>
+      </tbody>
+    </table>
+
+  </div>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Confirmation</h4>
+      </div>
+      <div class="modal-body">
+        Voulez-vous vraiment supprimer cet article ?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Non</button>
+        <button type="button" class="btn btn-danger">Supprimer</button>
+      </div>
+    </div>
+  </div>
+</div>

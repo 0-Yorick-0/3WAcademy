@@ -1,0 +1,42 @@
+<div class="row">
+  <form method="post" action="udpate_post.php" class="col-md-6">
+    <div class="form-group">
+      <label for="titre">Titre</label>
+      <input type="text" class="form-control" id="titre" name="titre" placeholder="<?= $donnees['titre'] ?>" required>
+    </div>
+<!-- Affichage statique de l'auteur-->
+    <div class="form-group">
+      <label for="contenu">Auteur : <?= $donnees['nom']; ?></label>
+    </div>
+
+    <div class="form-group">
+      <label for="contenu">Contenu</label>
+      <textarea name="contenu" rows="8" cols="65" required><?= $donnees['contenu']; ?></textarea>
+    </div>
+    <!-- Radios -->
+    <div class="radio">
+      <label>
+        <input type="radio" name="categorie" id="sympa" value="1" checked>
+        sympa
+      </label>
+    </div>
+    <div class="radio">
+      <label>
+        <input type="radio" name="categorie" id="pasCool" value="2">
+        pas cool
+      </label>
+    </div>
+    <div class="radio disabled">
+      <label>
+        <input type="radio" name="categorie" id="vraimentPasCool" value="3">
+        vraiment pas cool
+      </label>
+    </div>
+
+    <div class="form-group">
+      <input type="hidden" name="id" value="<?= $_GET['id']; ?>" />
+    </div>
+  </div>
+  
+    <button type="submit" class="btn btn-default">Submit</button>
+  </form>

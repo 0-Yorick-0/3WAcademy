@@ -1,0 +1,55 @@
+* {
+    transition: all .5s ease-in-out;
+}
+main#emmet {margin-top: 53px; margin-bottom: 65px;}
+
+span img.emmet {
+    position: absolute;
+    z-index: 10;
+    transform: rotate(-35deg);
+    width: 20%;
+    top: 190px;;
+    left: 50px;
+    opacity: 1;
+    filter: sepia(50%);
+}
+span img.emmet2  {
+    position: absolute;
+    right: 80px;
+    z-index: 10;
+    width: 10%;
+    margin: 0;
+}
+
+span img.emmet:hover {
+    filter: sepia(0%);
+}
+h1, h3 {
+    text-align: center;
+    color: #004488 !important;
+    text-shadow: 2px 2px 2px #3e3e3e;
+}
+.bg-warning {
+    padding: 5px 0 15px 0;
+    box-shadow: 2px 2px 2px #000;
+    margin-bottom: 20px;
+}
+.bg-warning:hover {
+    box-shadow: 4px 4px 4px #000;;
+}
+.bg-warning, .well   {
+    border-radius: 0% !important;
+}
+.well   {
+    margin-top: 20px;
+    height: 710px;
+}
+.well:first-child:hover, .well:nth-child(2):hover, .well:nth-child(3):hover   {
+    
+    background-color: #ddd
+}
+code {
+    background-color: #3e3e3e; 
+    color: #44a036; 
+    padding:20px;
+}

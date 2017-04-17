@@ -1,0 +1,22 @@
+body{
+  font-family: 'Roboto', serif;
+}
+
+header{
+  background: #5d4485;
+  background: -moz-linear-gradient(-45deg, #5d4485 0%, #2989d8 50%, #7db9e8 100%);
+  background: -webkit-linear-gradient(-45deg, #5d4485 0%,#2989d8 50%,#7db9e8 100%);
+  background: linear-gradient(135deg, #5d4485 0%,#2989d8 50%,#7db9e8 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5d4485', endColorstr='#7db9e8',GradientType=1 );
+  color: white;
+  box-shadow: 5px 5px 15px 0px rgba(0,0,0,0.75);
+}
+
+h1{
+  padding: 5rem 0;
+  text-transform: uppercase;
+}
+
+main{
+  margin: 5rem auto;
+}

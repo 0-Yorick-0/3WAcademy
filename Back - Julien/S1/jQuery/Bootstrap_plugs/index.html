@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap Plugins</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+
+
+      <div class="col-md-8">
+        <div class="input-group">
+          <span class="input-group-addon"></span>
+          <input
+            data-toggle="popover"
+            title="Votre nom de famille"
+            data-content="votre nom doit être en majuscule"
+            type="text"
+            class="form-control"
+            placeholder="Votre nom">
+
+        </div>
+      </div>
+
+      <button type="button" class="btn btn-lg btn-danger" data-toggle="popover" title="Popover title" data-content="And here's some amazing content. It's very engaging. Right?">Click to toggle popover</button>
+
+      <button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="Tooltip on bottom">Tooltip on bottom</button>
+
+      <p class="text-center">
+        <span
+          data-toggle="tooltip"
+          data-placement="top"
+          title="Le fatalisme est <b>facile</b> !"
+        >The Doctor</span> says : <b>"I'm clever !"</b>
+      </p>
+
+      <ul class="nav nav-pills">
+        <li class="active"><a href="#home" data-toggle="pill">Home</a></li>
+        <li><a href="#about" data-toggle="pill">About</a></li>
+        <li><a href="#contact" data-toggle="dropdown">Contact</a></li>
+      </ul>
+
+      <ul class="dropdown-menu">
+        <li><a data-target="#"></a>Un</li>
+        <li><a data-target="#"></a>Deux</li>
+        <li><a data-target="#"></a>Trois</li>
+      </ul>
+
+      <div class="tab-content">
+        <div role="tabpanel" class="tab-pane active in fade" id="home">
+          Mon contenu Home
+        </div>
+        <div role="tabpanel" class="tab-pane fade" id="about">
+          Mon contenu About
+        </div>
+        <div role="tabpanel" class="tab-pane fade" id="contact">
+          Mon contenu Contact
+        </div>
+      </div>
+
+
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/main.js">
+
+    </script>
+  </body>
+</html>

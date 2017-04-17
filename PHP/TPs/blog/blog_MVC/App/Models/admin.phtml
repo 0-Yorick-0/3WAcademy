@@ -1,0 +1,31 @@
+<h2>Gestion administrateur</h2>
+
+<a href="add_post.php">Ajouter un nouvel article</a>
+
+<div class="row">
+  <div class="col-md-10">
+    <table class="table">
+      <caption class="text-center">Liste des articles</caption>
+      <thead>
+        <th>Titre</th>
+        <th>Contenu</th>
+        <th>Catégorie</th>
+        <th>Auteur</th>
+      </thead>
+
+      <tbody>
+        <?php foreach ($donnees as $key) :?>
+          <tr>
+            <td><?= $key['titre']?></td>
+            <td><?= $key['contenu']?></td>
+            <td><?= $key['categorie']?></td>
+            <td><?= $key['nom']?></td>
+            <td><a href="udpate_post.php?id=<?= $key['id']?>">Modifier</a></td>
+            <td><a href="delete_post.php?id=<?= $key['id']?>">Supprimer</a></td>
+          </tr>
+        <?php  endforeach; ?>
+      </tbody>
+    </table>
+
+  </div>
+</div>

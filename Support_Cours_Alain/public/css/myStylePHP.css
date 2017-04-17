@@ -1,0 +1,70 @@
+/*
+Couleur
+-------------------------------
+violet : #AB47BC
+bleu : #42A5F5
+jaune (amber) : #FFCA28
+rose : #EC407A
+gris : #BDBDBD
+vert : #9CCC65
+indigo : #5C6BC0
+orange : #FFA726
+cyan : #26C6DA
+lime : #D4E157
+rouge #FFCDD2
+marron #A1887F
+*/
+
+pre {
+    background-color: #111;
+    color: #fff;
+    padding-top: 10px;
+}
+
+.alert {
+    margin-top : 20px;
+}
+.bg-warning, bg-info, bg-success, bg-danger {
+    padding: 20px 0px 20px 20px !important;
+    margin: 20px 0px;
+}
+..antislashe {
+    color : #26C6DA;
+}
+.balisephp {
+    color: #AB47BC; 
+}
+.balise {
+    color: #42A5F5;
+}
+.constante {
+    color : #FFCA28;
+}
+.superglo {
+    color : #A1887F;
+}
+.variable {
+    color: #5C6BC0;
+}
+.integer {
+    color: #FFA726;
+}
+.instruction {
+    color : #D4E157;
+}
+.function {
+    color: #EC407A;
+    font-style: italic;
+}
+.functionName {
+    color: #FFCDD2;
+}
+.commentaire {
+    color: #BDBDBD;
+}
+.simpleCote, .doubleCote {
+    color: #9CCC65;
+}
+.simpleCote {
+    font-style: oblique;
+}

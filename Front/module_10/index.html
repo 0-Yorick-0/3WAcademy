@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>PorteFolio</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Bree+Serif" rel="stylesheet">
+    <script src="https://use.fontawesome.com/5039eb5c37.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="container-fluid">
+      <header class="row">
+
+        <nav class="navbar">
+          <div class="container-fluid">
+            <div class="col-xs-6 col-xs-push-1">
+              <a href="#">
+                <img src="img/logo.svg" alt="bô logo">
+                Yorick Ferlin
+              </a>
+            </div>
+
+
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse col-xs-6 pull-right" id="bs-example-navbar-collapse-1">
+              <ul class="nav navbar-nav">
+                <li><a href="#"><i class="fa fa-home" aria-hidden="true"></i>Accueil</a></li>
+                <li><a href="#"><i class="fa fa-folder-open" aria-hidden="true"></i>Réalisations</a></li>
+                <li><a href="#"><i class="fa fa-envelope" aria-hidden="true"></i>Contact</a></li>
+              </ul>
+            </div><!-- /.navbar-collapse -->
+
+          </div>
+        </nav>
+      </header>
+
+      <main>
+        <section class="container-fluid">
+
+            <div class="row">
+              <div class="col-lg-12">
+                <h1 class="text-center"><strong>Bonjour et bienvenue sur mon portfolio</strong></h1>
+                <p class="text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae voluptatibus quas ratione. Impedit aperiam, asperiores, deserunt suscipit dolorum debitis fuga deleniti rerum assumenda earum minus voluptatem amet aut sequi eaque magnam at, vel numquam odio iusto reprehenderit eos! Ab, repellat! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae voluptatibus quas ratione.</p>
+                <a class="btn btn-default center-block" href="#" role="button"><strong>Découvrez-moi !</strong></a>
+              </div>
+            </div>
+
+        </section>
+        <div class="clearfix"></div>
+        <section class="container">
+          <div class="row">
+            <h2 class="text-center">Mes compétences</h2>
+          </div>
+          <div class="row">
+            <div class="col-lg-12">
+              <canvas class="center-block" id="canvaComptces" width="800" height="400">
+                Ton navigateur est une charrette...va vite t'acheter un ordi !
+                <script type="text/javascript">
+                  var c = document.getElementById( "canvaComptces" );
+                  var ctx = c.getContext("2d");
+                  // Triangle
+                  ctx.beginPath();
+                  ctx.moveTo(400,50);
+                  ctx.lineTo(600,400);
+                  ctx.lineTo(200,400);
+                  ctx.fillStyle = "#7ba360";
+                  ctx.fill();
+                  // Texte
+                  ctx.beginPath();
+                  ctx.fillStyle = "#888";
+                  ctx.font = "bold 16pt Bree Serif";
+                  ctx.fillText('HTML',370,25);
+                  ctx.fillText('CSS',625,395);
+                  ctx.fillText('JS',125,395);
+                  ctx.fill();
+                </script>
+              </canvas>
+            </div>
+          </div>
+        </section>
+        <div class="clearfix"></div>
+        <section class="container" id="realisations">
+          <div class="row">
+            <h2 class="text-center">Mes réalisations</h2>
+          </div>
+          <div class="row">
+            <article class="col-md-3">
+              <i class="fa fa-coffee fa-lg" aria-hidden="true"></i>
+              <h2 class="text-center">On discute</h2>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis, dolorum facere? Ipsa ratione, magnam laborum quam nihil alias excepturi! Impedit.</p>
+            </article>
+            <article class="col-md-3 center-block">
+              <i class="fa fa-flask fa-lg" aria-hidden="true"></i>
+              <h2 class="text-center">On tente</h2>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis, dolorum facere? Ipsa ratione, magnam laborum quam nihil alias excepturi! Impedit.</p>
+            </article>
+            <article class="col-md-3">
+              <i class="fa fa-code fa-lg" aria-hidden="true"></i>
+              <h2 class="text-center">On code</h2>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis, dolorum facere? Ipsa ratione, magnam laborum quam nihil alias excepturi! Impedit.</p>
+            </article>
+          </div>
+        </section>
+
+        <div class="clearfix"></div>
+
+        <section id="exemples" class="container">
+          <div class="row">
+            <h2 class="text-center">Quelques exemples de réalisations</h2>
+          </div>
+          <article class="row">
+            <div class="col-md-12">
+              <h3>Orange Juice :</h3>
+              <img src="img/real/1.png" class="pull-right" alt="photo d'oranges">
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus odit, eligendi, sit voluptatibus et accusamus numquam aperiam quidem illum magnam cupiditate tempora, similique exercitationem eaque nisi, iusto minima! Facilis vitae distinctio, repellendus a eveniet aliquid saepe asperiores veniam ab esse sit atque culpa nam adipisci enim! </p>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque non vel consequuntur esse omnis autem pariatur possimus delectus alias, quis eveniet repudiandae aspernatur cum sit accusantium rerum nulla suscipit quo quisquam animi eum voluptatum quos atque?</p>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci ad quibusdam autem qui aliquam ipsam delectus dolore nostrum quisquam animi in, deleniti, vitae dicta eaque aliquid quo reiciendis. Incidunt expedita mollitia magnam minima repellat delectus quo, excepturi voluptatum inventore! Assumenda necessitatibus, quo a facilis reprehenderit repudiandae dolorem, qui excepturi iusto?</p>
+              <a href="#" class="cta">En savoir plus <i class="fa fa-plus-circle" aria-hidden="true"></i></a>
+            </div>
+            <div class="col-md-12">
+              <h3>Time Past :</h3>
+              <img src="img/real/2.png" class="pull-left" alt="photo d'oranges">
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus odit, eligendi, sit voluptatibus et accusamus numquam aperiam quidem illum magnam cupiditate tempora, similique exercitationem eaque nisi, iusto minima! Facilis vitae distinctio, repellendus a eveniet aliquid saepe asperiores veniam ab esse sit atque culpa nam adipisci enim! </p>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque non vel consequuntur esse omnis autem pariatur possimus delectus alias, quis eveniet repudiandae aspernatur cum sit accusantium rerum nulla suscipit quo quisquam animi eum voluptatum quos atque?</p>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci ad quibusdam autem qui aliquam ipsam delectus dolore nostrum quisquam animi in, deleniti, vitae dicta eaque aliquid quo reiciendis. Incidunt expedita mollitia magnam minima repellat delectus quo, excepturi voluptatum inventore! Assumenda necessitatibus, quo a facilis reprehenderit repudiandae dolorem, qui excepturi iusto?</p>
+              <a href="#" class="cta">En savoir plus <i class="fa fa-plus-circle" aria-hidden="true"></i></a>
+            </div>
+            <div class="col-md-12">
+              <h3>Aqua Plant :</h3>
+              <img src="img/real/3.png" alt="photo d'oranges" class="pull-right">
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus odit, eligendi, sit voluptatibus et accusamus numquam aperiam quidem illum magnam cupiditate tempora, similique exercitationem eaque nisi, iusto minima! Facilis vitae distinctio, repellendus a eveniet aliquid saepe asperiores veniam ab esse sit atque culpa nam adipisci enim! </p>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque non vel consequuntur esse omnis autem pariatur possimus delectus alias, quis eveniet repudiandae aspernatur cum sit accusantium rerum nulla suscipit quo quisquam animi eum voluptatum quos atque?</p>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci ad quibusdam autem qui aliquam ipsam delectus dolore nostrum quisquam animi in, deleniti, vitae dicta eaque aliquid quo reiciendis. Incidunt expedita mollitia magnam minima repellat delectus quo, excepturi voluptatum inventore! Assumenda necessitatibus, quo a facilis reprehenderit repudiandae dolorem, qui excepturi iusto?</p>
+              <a href="#" class="cta">En savoir plus <i class="fa fa-plus-circle" aria-hidden="true"></i></a>
+            </div>
+          </article>
+        </section>
+
+        <div class="clearfix"></div>
+
+        <section id="contact" class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <h2 class="text-center">Contactez-moi</h2>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis reprehenderit est aut voluptatibus quia nesciunt quaerat labore dolorum sint cumque aliquid eligendi, rem reiciendis ab dolorem quae consectetur eos dolor?</p>
+              <form>
+                <div class="row">
+                  <div class="form-group col-md-6">
+                    <input type="text" class="form-control" id="formPrenom" placeholder="Votre prénom">
+                  </div>
+                  <div class="form-group col-md-6">
+                    <input type="email" class="form-control" id="formMail" placeholder="Votre mail">
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="form-group col-md-12">
+                    <textarea type="textarea" class="form-control" id="formMessage" placeholder="Votre message"></textarea>
+                  </div>
+                  <button type="submit" class="btn btn-default center-block">Submit</button>
+                </div>
+              </form>
+            </div>
+          </div>
+
+        </section>
+      </main>
+    </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  </body>
+  </html>

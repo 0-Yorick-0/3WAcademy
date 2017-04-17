@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" href="css/plugins/jquery.sweet-modal.css">
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+
+    <header class="interstitialSection">
+      <h1 class="text-center">This is a Header !</h1>
+    </header>
+
+    <div class="section" data-section-name="home">
+
+      <div class="container">
+        <div class="row">
+          <h2 class="text-center">Knob is wonderfull</h2>
+          <div class="col-md-4 col-md-push-4">
+            <div class="form-group">
+              <label for="bio" class="control-label wow bounceInLeft">Biographie :</label>
+
+              <input type="text" value="16" class="dial wow bounceInUp" id="fontSize">
+
+
+              <textarea  style="height:300px" class="form-control wow fadeInUp" id="bio" placeholder="Ta life..." maxlength="200"></textarea>
+              <div id="messageBio" style="display: none"></div>
+            </div>
+            <label for="progressBar" class="wow bounceInRight">Nombre de caractères :</label>
+
+            <input type="text" value="0" class="dial wow bounceInUp" id="progressBar">
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+      <div class="section" data-section-name="second">
+        <h2 class="text-center">Sweet Modal</h2>
+        <div class="row" id="buttonGroup">
+          <button type="button" name="button" id="alert" class="wow bounceInLeft">Voici une alert</button>
+
+          <button type="button" name="button" id="confirm" class="wow bounceInUp">Voici une Confirm</button>
+
+          <button type="button" name="button" id="youtube" class="wow bounceInRight">Et voici une vidéo Youtube</button>
+        </div>
+        <div class="row">
+          <p class="wow rotateIn">EN SOI...</p>
+        </div>
+
+      </div>
+
+      <div class="section" data-section-name="third">Section 3</div>
+
+      <div class="section" data-section-name="fourth">Section 4</div>
+
+    </div>
+
+    <footer class="interstitialSection">
+      <h1 class="text-center">This is a Footer !</h1>
+    </footer>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/plugins/jquery.scrollify.min.js">
+    </script>
+    <script type="text/javascript" src="js/plugins/jquery.knob.js"></script>
+    <script type="text/javascript" src="js/plugins/jquery.sweet-modal.js">
+
+    </script>
+    <script type="text/javascript" src="js/plugins/wow.js">
+
+    </script>
+    <script type="text/javascript" src="js/main.js">
+
+    </script>
+  </body>
+</html>

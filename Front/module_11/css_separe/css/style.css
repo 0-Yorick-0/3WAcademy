@@ -1,0 +1,93 @@
+
+
+/* Bandeau */
+
+#bandeau{
+  background: url(../img/background.jpg) center;
+}
+
+#bandeau-img{
+  color: white;
+  text-align: center;
+  padding: 10rem 0;
+}
+
+#bandeau-img p{
+  padding: 1rem 0;
+  font-family: 'Candal', serif;
+}
+
+#bandeau input{
+  display: block;
+  width: 100%;
+  border: none;
+  color: white;
+  background: #FB8A9B;
+  padding: 0.8rem 0 0.8rem 4rem;
+  transition: all 0.1s ease 0s;
+}
+
+#bandeau input:hover{
+  color: #FB8A9B;
+  background: #1E3E4B;
+  transition: all 0.1s ease 0s;
+}
+
+/* --- MAIN --- */
+
+.section-produits{
+  width: 80%;
+  margin: 4rem auto 0;
+}
+
+.section-produits h2{
+  color: #1E3E4B;
+  text-align: center;
+  border: 2px dashed #1E3E4B;
+  border-width: 1px;
+  border-width: 1px;
+  border-bottom: none;
+  padding: 1.5rem 0;
+  font-size: 1.4rem;
+}
+
+.produits{
+  display: flex;
+  justify-content: space-around;
+  margin: 3rem 0 0;
+}
+
+.produits a{
+  text-align: center;
+}
+
+.produits a:hover i, .produits a:hover h3{
+  color: #1E3E4B;
+}
+
+.produits article{
+  width: 31%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.produits article i, .produits h3{
+  color: #FB8A9B;
+  margin: 0.5rem 0 0;
+}
+
+.produits article h3{
+  font-size: 0.9rem;;
+}
+
+.prix{
+  color: #FB8A9B;
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin:  1rem 0 0;
+}
+
+.produits article p:last-child{
+  margin: 0.8rem 0;
+}

@@ -1,0 +1,675 @@
+body{
+  color: #646464;
+  font-family: 'Open Sans', serif;
+  background-color: rgb(242,242,242);
+  line-height: 1.5rem;
+}
+
+a{
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+a:hover{
+  transition: 0.5s ease;
+}
+
+.cta{
+  color: white;
+  display: block;
+  background: rgb(176,144,103);
+  text-align: center;
+  text-transform: uppercase;
+  width: 70%;
+  margin:  1rem auto 0.5rem;
+  padding: 1rem;
+  border: none;
+}
+
+.cta:hover{
+  color: rgb(174,145,101);
+  background: white;
+}
+
+button, html [type="button"], [type="reset"], [type="submit"] {
+    -webkit-appearance: none;
+}
+
+h1, h2, h3, h4{
+  color: rgb(150,176,17);
+  text-align: center;
+  font-family: 'Amaranth', serif;
+}
+
+h2{
+  font-size: 25px;
+}
+
+h2.lineBothSide span{
+  background: white;
+  padding: 0 1rem;
+}
+
+h2.lineBothSide:before{
+  content: '';
+  display: inline-block;
+  margin-bottom: -1.3rem;
+  border-top: 1px solid rgb(226,223,218);
+  width: 100%;
+}
+
+figure{
+  margin: 0;
+}
+
+img{
+  max-width: 100%;
+  display: block;
+}
+
+figcaption{
+  text-align: center;
+  font-family: 'Amaranth', serif;
+}
+
+ul{
+  list-style-type: none;
+  padding: 0;
+  text-align: center;
+}
+
+.clear{
+  clear: both;
+}
+
+/* --- HEADER --- */
+
+header{
+  background: url(../img/bg.jpg) no-repeat 40% 90% rgb(150,176,17);
+  color: rgba(255,255,255,0.8);
+  text-align: center;
+  position: relative;
+  padding: 0 0 0.5rem;
+}
+
+#topHeader{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+
+header #corner{
+  -moz-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+  position: fixed;
+  right: -70px;
+  top: -50px;
+  padding: 3rem 3rem 1rem;
+  background: rgb(135,158,15);
+}
+
+#topHeader p:first-child{
+  width: 100%;
+  margin: 0 0 1rem;
+  padding: 0.3rem 0;
+  background: rgba(135,158,15,0.9);
+}
+
+header img{
+  max-width: 80%;
+}
+
+header i{
+  border: 1px solid white;
+  border-radius: 100%;
+  margin: 0.2rem;
+  padding: 0.4rem;
+}
+
+header strong{
+  color: white;
+}
+
+header nav{
+  display: flex;
+  justify-content: space-around;
+  max-width: 70%;
+  margin: 0.5rem auto;
+  padding: 0;
+}
+
+#topHeader a:hover{
+  transform: translate(0, 10px);
+}
+
+header nav a{
+  color: rgba(255,255,255,0.8);
+  text-transform: uppercase;
+  border-radius: 50%;
+  padding: 1rem;
+}
+
+header nav a:hover{
+  color: rgb(150,176,17);
+  background: rgba(255,255,255,0.8);
+  padding: 1rem;
+}
+/* --- MAIN --- */
+
+main{
+  max-width: 65%;
+  margin: auto;
+  padding: 0;
+}
+
+/* --- BANDEAU --- */
+
+#index h1{
+  margin: 2rem auto;
+  font-size: 2.1rem;
+}
+
+#bandeau figure{
+  margin: 0;
+}
+
+#bandeau img{
+  margin: auto auto 1rem;
+}
+
+#bandeau figcaption{
+  text-align: center;
+  font-size: 0.7rem;
+}
+
+/* --- Slider --- */
+
+.flexslider{
+  border: none;
+  background-color: rgb(242,242,242);
+}
+
+/* --- ARTICLES --- */
+
+article.prez{
+  background-color: #fff;
+  padding: 0.5rem 1rem 1rem;
+  margin: 1.5rem auto;
+}
+
+#index h2{
+  margin: 0 0 1rem;
+}
+
+.vignettes{
+  display: flex;
+  justify-content: space-between;
+}
+
+#choixThe:hover img{
+  opacity: 0.7;
+}
+
+#choixThe img:hover{
+  opacity: 1;
+}
+
+#herbeSechee{
+  display: flex;
+  justify-content: space-between;
+}
+
+
+#herbeSechee p{
+  text-align: center;
+}
+
+#herbeSechee p:nth-child(4){
+  max-width: 30%;
+  margin: auto;
+
+}
+
+.herbes{
+  padding: 0.5rem;
+}
+
+/* ---------
+-------CONCEPT-------
+---------*/
+
+#concept main{
+  background: #fff;
+  margin: 0 auto 2rem;
+  padding: 4rem 1.5rem 1.5rem;
+}
+
+#concept main article.prez{
+  margin: 0;
+  padding: 0;
+}
+
+#concept h1{
+  color:rgb(101,101,101);
+  text-align: left;
+  margin: 0 0 1rem;
+  padding: 0;
+}
+
+#concept h1:nth-child(1){
+  margin: 2.5rem 0;
+}
+
+#concept h2{
+  margin: 0 0 1rem 0.5rem;
+  text-align: left;
+}
+
+#concept h2.lineBothSide span{
+  background: white;
+  padding: 0;
+}
+
+#concept h2.lineBothSide:before{
+  content: '';
+  display: inline-block;
+  margin-bottom: -1.3rem;
+  border-top: 1px solid rgb(226,223,218);
+  width: 100%;
+}
+
+#imgConceptLeft{
+  float: left;
+  margin: 1rem 1.5rem 1rem 1.5rem;
+  max-width: 50%;
+}
+
+#imgConceptRight{
+  float: right;
+  margin: 1rem 1.5rem 1rem 1rem;
+  max-width: 50%;
+}
+
+#concept aside{
+  display: flex;
+  justify-content: space-between;
+  background: #EAEFCF;
+  padding: 3rem 2rem;
+}
+
+#concept aside img{
+  margin: auto;
+  width: 30%;
+}
+
+#concept aside article{
+  width: 30%;
+}
+
+#concept aside article p{
+  text-align: center;
+}
+
+
+#concept h3{
+  color: #686965;
+  margin: 0.5rem auto 1.5rem;
+}
+
+/*--- LISTING --- */
+
+#listing #herbeSechee{
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+#listing .herbesDescriptions{
+  display: flex;
+  align-items: center;
+}
+
+#listing .herbesDescriptions h2{
+  text-align: left;
+}
+
+#listing .herbesDescriptions span{
+  padding: 0 0.5rem;
+  margin: 0 0.5rem;
+}
+
+#listing .description p{
+  text-align: left;
+}
+
+#listing .herbes{
+  width: 25%;
+}
+
+#listing .herbes p{
+  margin: 0 0 2rem;
+}
+
+/* --- PRODUCTS --- */
+
+#product .prez{
+  margin: 0 auto 3rem;
+}
+
+#product .bandeauTitre{
+  display: flex;
+  justify-content: space-between;
+}
+
+#product h2{
+  color: #7F7F7F;
+  text-align: left;
+  margin: 2rem auto 0;
+}
+
+#product .bandeauTitre div p{
+  margin: 1rem auto 2rem;
+}
+
+#product .bandeauTitre div:nth-child(2){
+  margin: 2rem 0;
+}
+
+#product .bandeauTitre .fa{
+  text-align: right;
+}
+
+#product .bandeauTitre div:nth-child(2) p{
+  color: #ADC240;
+  font-size: 0.8rem;
+  margin: 0;
+}
+
+#product .bandeauTitre i:first-child{
+  margin-left: 1rem;
+}
+
+#product i:hover{
+  color: #FBDD0F;
+}
+
+#product .herbes{
+  display: flex;
+  justify-content: space-between;
+  text-align: right;
+}
+
+#product .herbes img{
+  max-width: 80%;
+}
+
+#product form{
+  width: 30%;
+  align-self: center;
+}
+
+#product select{
+  width: 100%;
+  padding: 0.3rem;
+  color: #7F7F7F;
+  background: #FCFEFD;
+}
+
+#product .herbes p{
+  font-size: 1.8rem;
+  margin: 1rem 0 3rem;
+}
+
+#product .herbes .cta{
+  padding: 0.5rem 2.3rem;
+  font-size: 0.8rem;
+}
+
+#product .fa-heart{
+  color: #E68A7E;
+  font-size: 0.8rem;
+}
+
+#product .herbes span{
+  color: #ADC240;
+  font-size: 0.8rem;
+}
+
+
+
+/* --- FOOTER --- */
+
+footer{
+  background: url(../img/bg.jpg) no-repeat 40% 100% rgb(150,176,17);
+}
+
+footer nav#navFooter{
+  background: rgb(135,158,15);
+  display: flex;
+  justify-content: space-around;
+}
+
+.footerIco a{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: rgb(207,216,161);
+  border-radius: 50%;
+  padding: 0.2rem;
+}
+
+.footerIco a:hover{
+  color: rgb(135,158,15);
+  background: rgba(255,255,255,0.8);
+}
+
+.footerIco i{
+  margin: 1rem auto 0;
+}
+
+.footerIco p{
+  margin: 0.5rem 0 1rem;
+  text-transform: uppercase;
+  font-size: 0.7rem;
+}
+
+.footerUls nav{
+  display: flex;
+  justify-content: space-around;
+  color: white;
+}
+
+.footerUls nav ul li:first-child{
+  text-transform: uppercase;
+  margin: 1rem auto;
+}
+
+.footerUls nav ul li:nth-child(n+2){
+  line-height: 1.2rem;
+}
+
+.footerUls nav ul li:nth-child(n+2) a{
+  color: rgba(255,255,255,0.7);
+  font-size: 0.7rem;
+}
+
+.footerUls nav ul li:nth-child(n+2) a:hover{
+  color: rgba(255,255,255,1);
+}
+
+
+
+
+/* --- RESPONSIVE --- */
+
+@media screen and (max-width:970px){
+
+  .cta{
+    width: 30%;
+  }
+
+  #topHeader{
+    justify-content: space-around;
+  }
+
+  header #corner{
+    font-size: 0.6rem;
+    right: -70px;
+    top: -50px;
+    line-height: 1rem;
+    padding: 3.5rem 3rem 0.3rem;
+    z-index: 2;
+  }
+
+  header nav{
+    max-width: 100%;
+    margin: 0;
+  }
+
+  main{
+    max-width: 100%;
+  }
+
+  .vignettes{
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+
+  .vignettes figure{
+    margin: 0 5rem;
+  }
+
+  #herbeSechee{
+    flex-direction: column;
+  }
+
+  #herbeSechee img{
+    margin: auto;
+    max-width: 40%;
+  }
+
+  #concept aside{
+    flex-direction: column;
+  }
+
+  #concept aside img{
+    width: 15%;
+  }
+
+  #concept aside article{
+    width: 100%;
+    margin: 2rem 0 0;
+  }
+
+  #listing .herbesDescriptions img{
+    display: none;
+  }
+
+  #listing .herbes{
+    width: 100%;
+  }
+
+}
+
+@media screen and (max-width:750px){
+
+  #corner{
+    display: none;
+  }
+
+  header nav{
+    flex-direction: column;
+  }
+
+  header nav a{
+    border-radius: 0;
+  }
+
+  #bandeau{
+    display: none;
+  }
+
+  .vignettes figure{
+    margin: 0 1rem;
+    max-width: 30%;
+  }
+
+  footer #navFooter{
+    text-align: center;
+    flex-wrap: wrap;
+  }
+
+  .footerIco{
+    width: 49%;
+  }
+
+  .footerIco a{
+    border-radius: 0;
+  }
+
+  .footerUls nav{
+    flex-direction: column;
+  }
+
+  /* --- CONCEPT ----*/
+
+  #concept img{
+    float: none;
+    max-width: 100%;
+    margin: 2rem auto;
+  }
+
+  #concept aside img{
+    width: 40%;
+  }
+
+  #listing .herbes img{
+    max-width: 100%;
+  }
+
+  .cta{
+    width: 40%;
+  }
+
+  /* --- PRODUCT --- */
+
+  #product .bandeauTitre{
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  #product .bandeauTitre h2{
+    text-align: center;
+  }
+
+  #product .bandeauTitre div:nth-child(2) {
+    margin: 0;
+}
+
+  #product .bandeauTitre div p {
+    margin: 1rem 0;
+  }
+
+  #product .herbes{
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #product .herbes img{
+    margin: auto;
+  }
+
+  #product .herbes form{
+    width: 100%;
+  }
+
+  #product .herbes .cta{
+    padding: 1rem 0;
+    width: 100%;
+  }
+
+}

@@ -1,0 +1,18 @@
+<h2 class="text-center">Ecrivez votre commentaire</h2>
+
+<div class="row">
+  <form method="post" action="article.php?id=<?= $_GET['id']; ?>" class="col-md-6 col-md-push-3">
+
+      <div class="form-group">
+        <label for="titre">Auteur</label>
+        <input type="text" class="form-control" id="auteur" name="pseudo" placeholder="Votre nom" required>
+      </div>
+
+    <div class="form-group">
+      <label for="contenu">Contenu</label>
+      <textarea name="content" rows="8" cols="72" required></textarea>
+    </div>
+
+    <button type="submit" class="btn btn-default center-block">Submit</button>
+  </form>
+</div>

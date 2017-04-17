@@ -1,0 +1,130 @@
+/*  VISUALISATION DES BLOCS  */
+
+/*div, header, section, article, aside, nav {
+	border: 1px dashed rgba(0,0,0,0.15);
+	background-color: rgba(0,0,0,0.05);
+}
+
+.clear {
+	border: 1px dashed red;
+}*/
+
+*{
+	box-sizing: border-box;
+}
+
+#wrapper{
+	max-width: 100%;
+	margin-right: auto;
+	color: #A49E9F;
+	font-family: 'Arial', serif;
+}
+
+a{
+	text-decoration: none;
+	color: #2CBCD6;
+}
+
+ul{
+	list-style-type: none;
+}
+
+/* HEADER */
+
+/* Logotitre */
+
+#topHeader{
+	display: flex;
+	align-items: center;
+	margin-top: 2rem;
+	margin-left: 0.5rem;
+}
+
+h1{
+	width: 35%;
+	font-size: 1.5rem;
+	font-style: italic;
+	font-weight: bold;
+}
+
+/* NAV */
+
+/* Products Applications...*/
+
+nav{
+	position: relative;
+	border-bottom: 4px solid #2CBCD6;
+	padding: 0;
+}
+
+nav ul{
+	width:50%;
+	display: flex;
+	justify-content: space-around;
+	margin: 0 auto;
+}
+
+
+.menuTitle{
+	padding: 1rem 2rem;
+}
+
+.menuTitle:hover{
+	background-color: #2CBCD6;
+	transition: 0.5s;
+}
+
+.menuTitle a:first-child{
+	font-weight: bold;
+	color: #2CBCD6;
+}
+
+.menuTitle:hover a:first-child{
+	color: white;
+}
+
+/* sous-menu */
+
+
+li li{ /* le conteneur du méga-menu */
+	visibility: hidden;
+	height: 1px;
+	position: absolute;
+	top: 105%;
+	left: 0;
+	transition-timing-function: ease;
+}
+
+li:hover li{
+	visibility: visible;
+	display: flex;
+	flex-wrap: wrap;
+	width: 100%;
+	height: auto;
+	background-color: #2CBCD6;
+	transition: 0.5s;
+	padding-top: 2rem;
+	padding-bottom: 3rem;
+	padding-left: 0;
+}
+
+/* les boxs du méga_menu */
+
+h2{
+	color: #96D9F5
+}
+
+.sousMenu{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	flex-wrap: wrap;
+	width: 20%;
+	margin-left: 15rem;
+	margin-top: 0;
+}
+
+.sousMenu a:nth-child(n+2){
+	color: white;
+	line-height: 2rem;
+}

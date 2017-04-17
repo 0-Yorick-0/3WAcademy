@@ -1,0 +1,11 @@
+@font-face {
+  font-family: 'Cardo-Regular';
+  src: url('Cardo-Regular.eot');
+  src: url('Cardo-Regular.woff2') format('woff2'),
+       url('Cardo-Regular.woff') format('woff'),
+       url('Cardo-Regular.ttf') format('truetype'),
+       url('Cardo-Regular.eot?#iefix') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+

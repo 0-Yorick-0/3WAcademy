@@ -1,0 +1,33 @@
+/**
+  * Auteur : Alain GUILLON
+  * Version : 0.0.1
+  * Dernière modification : 06-02-2017
+  **/
+
+@charset "utf-8"; /* Définition de l'encodage */
+
+/* GENERAL */
+body {font-family: "Trirong", sans-serif; background-color: #535353;}
+h1,h2,h3,h4,h5,h6 {font-family: "Josefin Slab", serif;}
+.jumbotron, .well {border-radius: 0 !important;}
+
+/* NAVIGATION */
+header {margin-bottom: 53px;}
+header .navbar {border-bottom: 2px solid #080808;}
+
+/*  BODY */
+main#home .jumbotron {position: absolute; margin-top : 10%; margin-right : 0px; margin-bottom : 10%; margin-left : 0px;}
+main#cours-php, main#cours-mysql {margin-bottom: 50px}
+/* FOOTER */
+footer {
+    position: fixed;
+    bottom: 0;
+    height: 50px;
+    width: 100%;
+    background-color: #222;
+    border-top: 2px solid #080808;
+    color: #eee;
+}
+footer h5 {
+    line-height: 35px;
+}

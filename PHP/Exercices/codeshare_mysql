@@ -1,0 +1,157 @@
+/*******************************************************************************************************
+ * --------------------- BDD Cinema - Exercices
+ *******************************************************************************************************/
+<?php
+// 30 minutes
+
+/* Selectionner tous mes films français */
+
+SELECT title FROM movies WHERE languages = 'fr'
+
+/* Selectionner les films visibles et en anglais */
+SELECT title FROM movies WHERE languages='en'AND visible=1
+/* Selectionner tous les films qui ne sont pas visible et en français */
+SELECT title FROM movies WHERE languages='fr'AND visible=0
+/* Selectionner le titre, le synopsis et la note de presse des films noté entre 3 et 5 */
+
+  /* 1ère façon avec le WHERE / AND */
+SELECT title, synopsis FROM movies WHERE note_presse<=5 AND note_presse>=3
+  /* 2ème façon avec BETWEEN */
+SELECT title, synopsis FROM movies WHERE note_presse BETWEEN 3 AND 5
+
+45 minutes
+
+
+/* Selectionner le titre des films sortis par HBO ou par Warner Bros*/
+
+  /* avec le mot clé OR  */
+  SELECT title FROM movies WHERE distributeur='HBO' OR distributeur='Warner_Bros'
+  /* avec le mot clé IN */
+  SELECT title FROM movies WHERE distributeur IN ('HBO', 'Warner_Bros')
+
+/* Selectionner le titre et synopsis des films visibles français dont la note est inférieur à 4 */
+SELECT title, synopsis FROM `movies` WHERE note_presse<4
+/* Selectionner le titre et la durée des films entre 3 et 5 heures qui ne soit pas en VO */
+SELECT title, duree FROM `movies` WHERE languages='fr' AND duree BETWEEN 3 AND 5
+
+/* Selectionner le titre et l'année de sortie des films qui ont un budget suppérieur à 1 000 000€ en français ou en anglais	*/
+SELECT title, date_release FROM `movies` WHERE budget>1000000 AND languages IN ('fr' OR 'en')
+
+/* Selectionner les films sortis entre 1970 et 2012 qui ai une durée d'au moins 3h. */
+
+  /* YEAR() permet d'extraire l'année sur un date  */
+  SELECT title FROM movies WHERE YEAR(date_release) BETWEEN 1970 AND 2012 AND duree>3
+/* Selectionner le nom et la ville des acteurs de Orlando ou Atlanta et qui soit née dans les années 60 */
+SELECT lastname, city FROM actors WHERE YEAR(dob) BETWEEN 1960 AND 1969
+/* Selectionner la note et le contenu des commentaires dont l'état est actif (2), */
+
+/* ou en cours de validation (1) ou inactif (0) sortis entre le 15 mars 2011 et 16 Juin 2014 */
+
+1h
+
+/* Selectionner le nom et prénom des réalisateurs né entre 1965 et le 1er mai 1970 qui n'ai pas encore de note (NULL) */
+
+/* Selecionner les films qui ne soit pas en français et qui ne soit pas sortis entre 2010 et 2015 */
+
+/* Selectionner le nom des cinéma parisien du 2eme , 3eme ou 4eme arrondissement */
+	/* Même chose que précédemment avec le mot clé LIKE */
+    /* Même chose que précédemment avec une REGEX */
+
+/* Selectionner le titre, le prix et la note des films sortis l'an passé */
+
+/* Selectionner les emails et pseudonymes(username) des utilisateurs actifs(enable) qui soit du Rhône et qui ai un numéro de téléphone */
+
+/* Selectionner tous les emails des utilisateurs dont le telephone est valide et qu'il soit un numéro de portable (commençant par 06 ou 07) REGEX en mysql... */
+
+/* Selectionner les medias qui ont une video non null et qui soit une <iframe> REGEX en mysql... */
+
+/* Selectionner le nom des films, le synopsis et la description qui ne soit pas encore sortis ( dans le futur) */
+
+/* Selectionner la ville et le nom des cinémas Pathé ou UGC crée pendant le mois de février de l'an passé MONTH() */
+
+/* Selectionner les tags ayant au moins 8 caractères */
+
+/* Selectionner le contenu des commentaires finissant par trois petits points "..." ou par un point d'exclamation"!" */
+
+/* Selectionner les titres des films visibles et en VO ou VOST qui aient le mot "Gandalf" ou "Frondon" ou "Sacquet" dans leurs synopsis */
+
+/* Selectionner le nom et prénom des réalisateurs ayant au moins 40 ans */
+
+/* Selectionner la date des séances (table session ) qui sortiront prochainement et  dans 1 mois maximum */
+
+/* Afficher le chomp title de la table movies sur la table session */
+/* Selectionner le nom des acteurs  qui ont entre 30 et 50 ans */
+/* Selectionner les pseudonymes(username) utilisateurs actifs(enable) qui se sont connectés il y a moins de 10 min */
+/* Selectionner l'email et la ville des utilisateurs lyonnais qui se sont inscrits hier entre 20h et minuit */
+/* Les réalisateurs nés un vendredi 13 ou entre les semaines 32 et 45 */
+/* Selectionner les medias qui ont des liens externe(http:// ou http://www) sur leur image ou video provenant de Facebook et qui soit des jpg ou jpeg */
+/* ----------------- fonction COUNT() MAX() SUM() AVG() ----------------------*/
+/* Les film les plus cher (budget) au moins cher */
+/* Les films les plus récent au plus ancien */
+/* les films trié par ordre alphabétique */
+/* Les 10 derniers films visibles sortis entre 2010 et 2016 */
+/* 1ere argument : le point de départ , le 2eme argument : le nombre souhaité */
+/* Selectionner les 5 commentaires les plus anciens */
+/* Selectionner les 8 derniers utilisateurs actifs(enable) et non vérouillé(locked) qui se sont connectés (last_login). */
+/* Compte le nombre de film par distributeur */
+/*  Compte le nombre de film par distributeur */
+/* Somme des budgets des films en VO par note */
+/* HAVING remplace un WHERE quand j'ai à utiliser des fonctions d'agrégations dans un WHERE */
+/* Afficher le nombre de film par BO ET que si le nombre de film est supérieur à 2 par bo */
+/* Selectionner la moyenne des budget et langue par langue dont le groupe a une moyenne de budget > 10000 */
+/* Grouper par langue la moyenne des budget */
+/* Grouper par langue la moyenne des budget */
+/* Quand j'ai utilisation des fonctions d'agrégations, j'utilise HAVING à la place de WHERE */
+/* Nombre de films sortis en 2014 */
+/* Somme des budgets des films dont la note est comprise entre 3 et 5 */
+/* Durée totale des films en VO */
+/* Durée moyenne des films de 2014 */
+/* Moyenne des budgets des films de 2014 */
+/* Moyenne des ages des acteurs de Birmingham */
+/* Budget le plus petit des films */
+/* Réalisateur le plus jeune */
+/* Le nom et prénom du Réalisateur le plus jeune */
+/* La moyenne des notes de presse des films qui ont au moins une URL dans leur synopsis ou description */
+/* Somme des budgets des films dont la note est comprise entre 3 et 5 */
+/* Age du réalisateur le plus vieux qui ait une note de plus de 3 */
+/* Des 10 derniers utilisateurs qui se sont connectés aujourd'hui */
+/* La date du dernier jour du mois des inscriptions d'utilisateurs */
+/* LAST_DAY() genere une date à partir du dernier jour du mois de cette date */
+/* L'heure, la minute et la seconde des séances qui sortiront prochainement dans 1 mois maximum */
+/* Les noms de réalisateurs nés entre 1962 et 1973 ou qui ont entre 70 et 75 ans */
+/* Les utilisateurs nés un vendredi 13 ou entre les semaines 32 et 45 */
+/* Sortir au format jj / mm / YYYY à HH:mm la date et l'heure de la session qui est le plus proche de la date actuelle */
+/* EURO  %Y-%m-%d %H.%i.%s': GET_FORMAT() sort une date et une heure avec un format prédéfini */
+/* La ville ou il y a le plus d'acteurs */
+/* Le nb de séances par cinéma diffusé après 20h */
+/* Des 7 premiers films français visibles qui sont sortis il y a au moins une semaine */
+/* Des séances qui sortiront prochainement dans 1 mois maximum */
+/* Le nombre d'utilisateurs par département ayant une dernière activité de plus d'une semaine */
+/* Le nombre d'utilisateurs actifs par ville qui soit administrateur et qui ait un email ou numéro de téléphone dans leur description */
+/* La note maximum des commentaires publiés (state = 1) par films */
+/* Nombre d'acteurs par ville, ayant au moins 40 ans */
+/* Age du réalisateur le plus vieux qui ait une note de plus de 3 */
+/* Le nom et prénom du acteur le plus vieux parmis ceux qui habitent à Los Angeles */
+/* La moyenne des ages des 5 derniers acteurs inscrits en base de données */
+/* Le film le plus cher parmis les 5 films les mieux notés Sous-requete = parmis */
+/* Le nombre de cinéma implantés dans l'Isère ou dans le Rhone par département sauf pour le 3eme arrondissement */
+/* Le nombre de discussions par jour sauf pour aujourd'hui */
+/* La moyenne des note de presse des films français par type ayant un téléphone  portable dans leur desciption si cette moyenne est supérieur à 3 */
+/* Le nombre d'utilisateur qui sont admin(is_admin = 1 ou 2) par ville uniquement si le nombre par ville est supérieur à 1 */
+/* Selections des titres des films et leur titre de catégorie */
+/* Selectionner Le contenu , la date de création  et le pseudonyme (table user) des commentaires */
+/* Selectionner Le contenu , la date de création  et le pseudonyme (table user) ET le nom du film (movies) des commentaires */
+/* Sélection de tous les films de la catégorie Fantastique */
+/* Les 5 derniers  commentaires du film Godzilla */
+/* Les 3 prochaines séances du cinéma UGC */
+/* Le nb de commentaire par ville d'utilisateur */
+/* La Moyenne de la duree des films joués par Ian McKellen */
+/* Le nom du film qui a le plus de commentaires */
+/* Le nom de la catégorie qui comporte des films joués par Christoph Waltz et réalisé par Tarantino */
+/* Le nb de tags des films réalisés par Peter jackson */
+/* Le nombre d'acteurs qui ont joué dans aucun film */
+/* Le budget maximum dépensé par le réalisateur Francis Veber /*
+/* Le budget total des films les plus longs joués avec Aaron Paul */
+/* Les 2 acteurs les plus vieux parmis les 5 derniers acteurs new-yorkais les plus jeune   */
+
+?>

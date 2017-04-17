@@ -1,0 +1,76 @@
+body{
+	color:white;
+	background-color: #444444;
+}
+@font-face{
+	font-family: 'Comic Sans MS';
+	src: url('../font/ComicSansMSRegular.ttf');
+}
+
+h1, h2, h3, h4{
+	color: #D25735;
+}
+
+#elephant{
+	max-width: 200px;
+	max-height: 130px;
+}
+
+#MySQL
+{
+	max-width: 200px;
+	max-height: 130px
+}
+
+h3 span{
+	color: grey;
+}
+
+.paragrapheArial{
+	font-family: "Arial", cursive, serif;
+}
+
+#pred{
+	color: red;
+}
+
+#pblue{
+	color: blue;
+}
+
+#pgreen{
+	color: green;
+}
+
+.paragrapheComic{
+	font-family: "Comic Sans MS", cursive, serif;
+	width: 15%;
+	padding: 0.5rem 0.5rem;
+	text-align: center;
+}
+
+#pbackred{
+	background-color: red;
+}
+
+#pbackblue{
+	background-color: blue;
+}
+
+#pbackgreen{
+	background-color: green;
+}
+
+a:visited{
+	color: white; 
+}
+
+a{
+	color: white;
+}
+
+
+
+
+
+

@@ -1,0 +1,41 @@
+<div class="row">
+  <form method="post" action="admin.php" class="col-md-6">
+    <div class="form-group">
+      <label for="titre">Titre</label>
+      <input type="text" class="form-control" id="titre" name="titre" placeholder="Titre" required>
+    </div>
+<!-- Menu déroulant auteurs-->
+    <select class="form-control" name="auteur">
+      <?php
+      $req = $bdd->query('SELECT id, nom FROM auteur ');
+        while ($donnees = $req->fetch()) :?>
+        <option value="<?= $donnees['id']?>"><?= $donnees['id'] . ' ' . $donnees['nom'] ?></option>
+      <?php endwhile;?>
+    </select>
+
+    <div class="form-group">
+      <label for="contenu">Contenu</label>
+      <textarea name="contenu" rows="8" cols="65" required></textarea>
+    </div>
+    <!-- Radios -->
+    <div class="radio">
+      <label>
+        <input type="radio" name="categorie" id="sympa" value="1" checked>
+        sympa
+      </label>
+    </div>
+    <div class="radio">
+      <label>
+        <input type="radio" name="categorie" id="pasCool" value="2">
+        pas cool
+      </label>
+    </div>
+    <div class="radio disabled">
+      <label>
+        <input type="radio" name="categorie" id="vraimentPasCool" value="3">
+        vraiment pas cool
+      </label>
+    </div>
+    <button type="submit" class="btn btn-default">Submit</button>
+  </form>
+</div>

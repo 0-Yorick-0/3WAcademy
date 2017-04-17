@@ -1,0 +1,226 @@
+
+
+body{
+	background: url(../img/fond.png);
+	font-size: 16px;
+  line-height: 2.8rem;
+}
+
+#wrapper{
+	font-size: 1em;
+	font-family: 'Slabo 27px', serif;
+	color: #424953;
+}
+
+.container{
+  max-width: 1000px;
+}
+
+a{
+  text-decoration: none;
+  color: white;
+}
+
+i{
+  margin: 0 0.8rem;
+  color: #25B3B4;
+}
+
+a:hover{
+	border-bottom: 3px solid white;
+  text-decoration: none;
+  color: white;
+}
+
+.cta{
+  background-color: #25B3B4;
+  color: white;
+  border-radius: 0;
+  padding: 10px 12px;
+}
+
+.cta:hover{
+  text-decoration: none;
+  border-bottom: none;
+  color: #25B3B4;
+  border:none;
+}
+
+.cta i{
+  color: white;
+}
+
+.cta i:hover{
+  color: #25B3B4;
+}
+
+.cta:hover i{
+  color: #25B3B4;
+}
+/*HEADER*/
+
+.dropdown{
+  display: none;
+}
+
+
+header{
+  width: 100%;
+  margin: 8rem 0 0;
+  background-color: #25B3B4;
+  border-top: 5px #1B9CA2 solid;
+  border-bottom: 5px #1B9CA2 solid;
+}
+
+header img{
+  display: block;
+  margin: 0 auto;
+}
+
+header ul.nav-pills {
+  margin: 2rem auto 1.5rem;
+  width: 28%;
+  font-size: 2rem;
+}
+
+header ul.nav-pills li{
+  width: 28%;
+  padding-left: 1rem;
+}
+
+/* MAIN */
+
+h1{
+  margin: 0 auto 3rem;
+  font-size: 4rem;
+}
+
+#intro .col-lg-9{
+  float: none;
+  text-align: center;
+  margin: 6rem auto;
+}
+
+#blocMenu .row .col-md-8{
+  background-color: #B6DFDD;
+  padding: 5rem 2.5rem 3rem 2rem;
+}
+
+h2{
+  font-size: 4.5rem;
+  margin: auto auto 3rem;
+}
+
+h2 span{
+  color:#25B3B4;
+}
+
+.pull-left{
+  margin: 0 2rem 0 0;
+}
+
+h3{
+  margin: auto auto 2rem;
+}
+
+aside{
+  background-color: #25B3B4;
+  border: 5px #1B9CA2 solid;
+  margin: 0 -15px 0 auto;
+  max-width: 99%;
+  color: white;
+  font-size: 1.4rem;
+  padding: 3rem 2rem;
+}
+
+aside i{
+  color: white;
+}
+
+aside h2{
+font-size: 2.4rem;
+}
+
+aside h2 span{
+  color: #B6DFDD;
+}
+
+aside img{
+  margin-top: -75px;
+  margin-right: -70px;
+}
+
+aside h3{
+  color: #B6DFDD;
+  font-size: 2rem;
+}
+
+/* FOOTER */
+
+footer{
+  margin: 2rem auto;
+}
+
+footer img{
+  display: block;
+  width: 5%;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 1024px){
+
+  aside img{
+    display: none;
+  }
+
+  header ul.nav-pills {
+    width: 40%;
+  }
+
+  header ul.nav-pills li{
+    width: 28%;
+  }
+
+}
+
+@media screen and (max-width: 768px){
+
+  header ul.nav-pills {
+    width: 50%;
+  }
+
+  aside{
+  margin: 2rem auto;
+  }
+}
+
+@media screen and (max-width: 425px){
+
+  header .nav{
+    display: none;
+  }
+
+  .dropdown{
+    display: block;
+  }
+
+  #dropdownMenu1{
+    border: none;
+    background-color: #25B3B4;
+    color: white;
+  }
+
+  .dropdown-menu{
+    left: 31%;
+    color: white;
+    border: none;
+    background-color: #25B3B4;
+  }
+
+  .dropdown-menu > li > a{
+    color: white;
+    border: none;
+    background-color: #25B3B4;
+  }
+
+}

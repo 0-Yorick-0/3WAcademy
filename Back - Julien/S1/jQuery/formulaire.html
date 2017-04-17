@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="utf-8">
+  <meta name="viewport" content="width=width-device, initial-scale=1" />
+  <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://use.fontawesome.com/5039eb5c37.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
+	<title>Formulaire</title>
+</head>
+<body>
+	<!--html-->
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <h3>Formulaire</h3>
+
+					<form action="#">
+
+						<div class="form-group">
+						  <label for="">Avatar :</label>
+						  <input type="text" class="form-control" id="avatar" placeholder="url de votre avatar">
+							<img src="" alt="" id="imgAvatar" style="display:none;width:50%;border-radius:50px"/>
+						</div>
+
+						<div class="form-group">
+						  <label for="name" class="control-label">Nom :</label>
+						  <input type="text" class="form-control" id="name" placeholder="Ton blaze">
+							<div id="messageNom" class="alert alert-danger" style="display:none"></div>
+						</div>
+
+						<div class="form-group">
+						  <label for="mail" class="control-label">Email :</label>
+						  <input type="text" class="form-control" id="mail" placeholder="Ton mail">
+							<div id="messageMail" class="alert alert-danger" style="display: none"></div>
+						</div>
+
+						<div class="form-group">
+						  <label for="tel">Ton phone :</label>
+						  <input type="text" class="form-control" id="tel" placeholder="Vas-y lâche ton 06">
+							<div id="messageTel" class="alert alert-danger" style="display:none"></div>
+						</div>
+
+						<div class="form-group">
+						  <label for="dispo">Tes dispos :</label>
+						  <input type="text" class="form-control" id="dispo" placeholder="XX:XX">
+							<div id="messageDispo" class="alert alert-danger" style="display:none"></div>
+						</div>
+
+						<div class="form-group">
+						  <label for="numCB">Numéro de CB :</label>
+						  <input type="text" class="form-control" id="numCB" placeholder="XXXX-XXXX-XXXX-XXXX">
+							<div id="messageNumCB" class="alert alert-danger" style="display:none"></div>
+							<div class="row">
+							  <div class="form-group col-xs-8">
+							    <label for="dateCB">Date d'expiration :</label>
+							    <input type="text" class="form-control" id="dateCB" placeholder="XX/XX">
+									<div id="messageDateCB" class="alert alert-danger" style="display:none"></div>
+							  </div>
+								<div class="form-group col-xs-4">
+									<label for="crypto">Cryptogramme :</label>
+							    <input type="text" class="form-control" id="crypto" placeholder="XXX">
+									<div id="messageCrypto" class="alert alert-danger" style="display:none"></div>
+								</div>
+							</div>
+						</div>
+
+						<div class="form-group" id="sexe">
+							<label for="homme">Homme : </label>
+							<input type="radio" name="sexe" value="homme" id="checkHomme">
+							<label for="femme">Femme : </label>
+							<input type="radio" name="sexe" value="femme" id="checkFemme">
+						</div>
+
+						<div class="form-group">
+						  <label for="jDn">Date de naissance :</label>
+						  <input type="text" class="form-control" id="date" placeholder="jj/mm/aaaa" />
+							<div id="messageDDN" class="alert alert-danger" style="display: none"></div>
+						</div>
+
+						<div class="form-group">
+						  <label for="pass" class="control-label">Password :</label>
+						  <input type="password" class="form-control" id="pass" placeholder="Ton pire secret">
+							<div id="messagePass" class="alert alert-danger" style="display:none"></div>
+						</div>
+
+						<div class="checkbox disabled">
+						  <label>
+						    <input type="checkbox" value="" id="reveal">
+						    Révéler ton pire secret
+						  </label>
+						</div>
+
+						<div class="form-group">
+						  <label for="pass" class="control-label">Confirmez Password :</label>
+						  <input type="password" class="form-control" id="confirmPass" placeholder="Encore ton pire secret">
+							<div id="messageConfirmPass" class="alert alert-danger" style="display:none"></div>
+						</div>
+
+						<div class="form-group">
+						  <label for="cp" class="control-label">Code Postal :</label>
+						  <input type="text" class="form-control" id="cp" placeholder="Ton code postal">
+							<div id="messageCP" class="alert alert-danger" style="display: none"></div>
+						</div>
+
+						<div class="form-group">
+						  <label for="cp" class="control-label">Ville :</label>
+						  <input type="text" class="form-control" id="ville" placeholder="Ta cité">
+							<div id="messageVille" class="alert alert-danger" style="display: none"></div>
+						</div>
+
+						<div class="form-group">
+						  <label for="age" class="control-label">Age :</label>
+						  <input type="text" class="form-control" id="age" placeholder="Ton kilométrage">
+							<div id="messageAge" class="alert alert-danger" style="display: none"></div>
+						</div>
+
+						<div class="form-group">
+						  <label for="">Vous êtes du genre à vous bouger la couenne ?</label>
+							<select class="form-control" id="menuSport">
+								<option value="none" selected disabled>Séléctionnez un sport</option>
+							  <option value="pelote">Pelote Basque</option>
+							  <option value="curling">Curling</option>
+							  <option value="cricket">Cricket</option>
+							  <option value="fitness">Fitness</option>
+							  <option value="boxe">Boxe Finlandaise</option>
+								<option value="autre">autre...</option>
+							</select>
+								<input type="text" class="form-control" id="autre" placeholder="ici ton sport..." style="display:none">
+								<div id="messageSport" class="alert alert-danger" style="display: none"></div>
+						</div>
+
+						<div class="form-group" id="loisirs">
+						  <p><strong>Vos loisirs de sociopathe :</strong></p>
+							<div class="checkbox">
+								<label for="melt">
+									<input type="checkbox" value="" id="melt">
+										Faire fondre des trucs
+								</label>
+							</div>
+							<div class="checkbox">
+								<label for="stones">
+									<input type="checkbox" value="" id="stones">
+										Jeter des pierres à des gens
+								</label>
+							</div>
+							<div class="checkbox">
+								<label for="foot">
+									<input type="checkbox" value="" id="foot">
+										Donner des coups de pieds dans des poubelles
+								</label>
+							</div>
+							<div class="checkbox">
+								<label for="metal">
+									<input type="checkbox" value="" id="metal">
+										Ecouter du black metal
+								</label>
+							</div>
+							<div class="checkbox">
+								<label for="drink">
+									<input type="checkbox" value="" id="drink">
+										Boire du détérgent
+								</label>
+							</div>
+							<div class="checkbox">
+								<label for="nrj12">
+									<input type="checkbox" value="" id="nrj12">
+										Regarder NRJ12
+								</label>
+							</div>
+							<div class="checkbox">
+								<label for="tous">
+									<input type="checkbox" value="" id="tous">
+										Tous
+								</label>
+							</div>
+							<div id="messageLoisirs" class="alert alert-danger" style="display: none"></div>
+						</div>
+
+						<div class="form-group">
+							<i class="fa fa-facebook-official fa-2x" aria-hidden="true"></i>
+							<label for="tel">Ton Facebook :</label>
+							<input type="text" class="form-control" id="facebook" placeholder="Ton Facebook">
+							<div id="messageFacebook" class="alert alert-danger" style="display:none"></div>
+						</div>
+
+						<div class="form-group">
+							<i class="fa fa-twitter fa-2x" aria-hidden="true"></i>
+							<label for="tel">Ton Twitter :</label>
+							<input type="text" class="form-control" id="twitter" placeholder="Ton Twitter">
+							<div id="messageTwitter" class="alert alert-danger" style="display:none"></div>
+						</div>
+
+						<div class="form-group">
+						  <label for="bio" class="control-label">Biographie :</label>
+							<span class="badge" id="compteurBio"></span>
+
+								<span class="badge btn" id="fontPlus"> + </span>
+								<span style="font-size:14px">Taille de la police</span>
+								<span class="badge btn" id="fontMoins"> - </span>
+
+						  <textarea class="form-control" id="bio" placeholder="Ta life..." maxlength="200"></textarea>
+							<div id="messageBio" style="display: none"></div>
+						</div>
+						<p id="pBio"></p>
+						<div class="progress">
+						  <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="min-width: 0.2em"></div>
+						</div>
+
+						<p style="display: none" class="alert alert-success"> Bravo ! T'as réussi à écrire ton nom, y a de quoi être fier...</p>
+
+						<div id="capcha" class="form-group">
+							<label for="sommeCapcha" class="control-label">Voici trois chiffres : <span></span>. Merci de rentrer leur somme afin de vérifier que t'es pas un fuckin' robot !</label>
+							<input type="text" class="form-control" name="sommeCapcha" value="" id="sommeCapcha" />
+							<div id="messageCapcha" class="alert alert-danger" style="display: none"></div>
+						</div>
+
+						<div class="form-group">
+						  <label for="">
+								<input type="checkbox" value="" id="conditions">
+								J'accepte sans les lire les conditions générales d'enfilage
+							</label>
+						</div>
+						<button type="button" name="button" class="btn btn-warning btn-sm" id="reload">Allez recommence !</button>
+						<button type="button" name="button" class="btn btn-success btn-sm" disabled id="send">Envoie la purée !</button>
+
+					</form>
+      </div>
+    </div>
+  </div>
+
+
+
+	<!--js-->
+
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+
+	<script src=js/formulaire.js type="text/javascript" ></script>
+
+
+
+</body>
+</html>

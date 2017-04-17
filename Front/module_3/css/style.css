@@ -1,0 +1,102 @@
+body{
+	background-image: url(../img/fond.png);
+	margin-top: 0;
+}
+
+#content{
+	max-width: 750px;	
+	margin: 0 auto;
+	padding-top: 0;
+	font-size: 16px;
+	color: #6D6D6D;
+	font-family: verdana, sans-serif;
+}
+
+.clear{
+	display: block;
+	clear: both;
+}
+
+header{
+	background-color: #B8CB21;
+	height: 180px;
+	font-family: 'Oswald', sans-serif;
+	color: #2C4726;
+}
+
+header img{
+	margin-top: 15px;
+	margin-left: 15px;
+}
+
+nav{
+	float: right;
+	margin: 70px 30px 0 0;
+}
+
+nav a{
+	text-decoration: none;
+	color: #2C4726;
+	font-size: 1.3em;
+	text-transform: uppercase;
+	display: inline-block;
+	margin:0 0 0 3rem;
+}
+
+main{
+	background-color: #FFFFFF;
+	padding: 15px 15px;
+	clear: both;
+	font-size: 1.1em;
+}
+
+article{
+	padding-right: 10px;
+	padding-left: 10px;
+}
+
+.fa-pagelines{
+	color: #B8CB21;
+	float: left;
+	margin : 10px 5px 0 0;
+}
+
+h2{
+	color: #B8CB21;
+	font-family: 'Oswald', sans-serif;
+	text-transform: uppercase;
+	font-weight: normal;
+	font-size: 24px;
+}
+
+main img{
+	max-width: 100%;
+	width: 200px;
+	float: left;
+	margin-right: 10px;
+	margin-bottom: 20px;
+}
+
+
+button a{
+	text-decoration: none;
+	color: white;
+	font-size: 16px;
+
+}
+
+button{
+	background-color: #B8CB21;
+	border: none;
+	float: right;
+	padding: 9px 8px;
+}
+
+footer{
+	margin-top: 30px;
+	margin-bottom: 100px;
+}
+
+footer p{
+	text-align: center;
+}

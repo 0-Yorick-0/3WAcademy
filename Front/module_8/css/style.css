@@ -1,0 +1,221 @@
+/*  VISUALISATION DES BLOCS  */
+
+/*div, header, section, article, aside, nav {
+	border: 1px dashed rgba(0,0,0,0.15);
+	background-color: rgba(0,0,0,0.05);
+}
+
+.clear {
+	border: 1px dashed red;
+}*/
+
+*{
+	box-sizing: border-box;/*les box ne s'étirent pas si on augmente le padding*/
+	outline: none; /*correction pour chrome*/
+}
+
+body{
+	background-color: #F2F1F4;
+}
+
+#wrapper{
+	font-family: 'PT Sans Narrow', serif;
+}
+
+.container{
+	max-width: 1200px;
+	margin: 0 auto;
+}
+
+a{
+	text-decoration: none;
+	color: white;
+}
+
+ul{
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+p{
+	color: #6F7274;
+	font-family: 'Open Sans', serif;
+	font-size: 0.8rem;
+	line-height: 1.4rem;
+}
+
+/* HEADER */
+
+#navTab{
+	display: none;
+}
+
+header img{
+	display: block;
+	margin: 0.9rem auto;
+	width: 13%;
+}
+
+nav{
+	position: relative;
+	text-align: center;
+	font-size: 1.5rem;
+	background-color: #30A894;
+	width: 100%;
+	margin: 1.6rem auto 0;
+}
+
+ul li{
+	display: inline-block;
+	padding: 0.8rem 0;
+	transition: all 0.4s ease 0.1s;
+}
+
+nav a{
+	margin: 0 4rem;
+}
+
+nav ul li:hover {
+	background-color: white;
+	transition: all 0.4s ease 0.1s;
+}
+
+nav ul li:hover a{
+	color: #30A894;
+	transition:0.5s;
+}
+
+nav ul li:hover a:hover{
+	color: #30A894;
+}
+
+/* MAIN */
+
+main{
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+
+section{
+	width: 69.6%;
+	margin: 1rem 0 5rem;
+}
+
+h2{
+	font-size: 1rem;
+	text-transform: uppercase;
+	background-color: #30A894;
+	padding: 0.8rem 0.5rem;
+	color: white;
+}
+
+main img{
+	max-width: 100%;
+	margin: 0;
+}
+
+main p{
+	margin-bottom: 2rem;
+}
+
+/* ASIDE */
+
+aside{
+	width: 29%;
+	background-color: #B8DCB1;
+	height: 75%;
+	margin-top: 0;
+	padding: 1rem;
+
+}
+
+aside article{
+	margin: 0;
+}
+
+aside h2{
+	padding: 0.5rem;
+	margin: 0;
+}
+
+/* FOOTER */
+
+footer img{
+	display: block;
+	max-width: 3%;
+	margin: 1rem auto;
+}
+footer p{
+	text-align: center;
+}
+
+/* RESPONSIVE */
+
+@media screen and (max-width: 1024px)
+{
+	.container{
+		max-width: 100%;
+		margin: 0;
+	}
+
+	header img{
+		width: 25%;
+	}
+
+	ul li{
+		display: block;
+		margin: 0 auto;
+	}
+
+	main{
+		width: 100%;
+	}
+
+	section{
+		width: 100%;
+		margin: 2rem;
+	}
+
+	aside{
+		width: 100%;
+		padding: 0 auto;
+	}
+}
+
+@media screen and (max-width: 900px)
+{
+	#navDesktop{
+		display: none;
+	}
+
+	#navTab{
+		display: block;
+		position: relative;
+		color: white;
+	}
+
+	#navTab ul{
+		visibility: hidden;
+		position: absolute;/*on place tjrs un top et un left avec un absolute */
+		top: 48px;
+		left: 0;
+		background-color: #30A894;
+		width: 100%;
+		transition-property: height;
+		transition-duration: 0.5s;
+	}
+
+	#navTab .fa:hover ul{
+		visibility: visible;
+		display: block;
+		font-size: 1rem;
+	}
+}
+
+@media screen and (max-width: 500px){
+	aside{
+		display: none;
+	}
+}

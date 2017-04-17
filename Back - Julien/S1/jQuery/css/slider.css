@@ -1,0 +1,42 @@
+body{
+  box-sizing: border-box;
+  overflow: none;
+}
+
+.container-fluid{
+  background: #ae8098;
+  background: -moz-linear-gradient(45deg, #ae8098 0%, #8c6a95 50%, #4c58a6 100%);
+  background: -webkit-linear-gradient(45deg, #ae8098 0%,#8c6a95 50%,#4c58a6 100%);
+  background: linear-gradient(45deg, #ae8098 0%,#8c6a95 50%,#4c58a6 100%);
+}
+
+h1{
+  transition: all 0.3s ease-in;
+}
+
+#alt{
+  display: none;
+}
+
+.alt{
+  color: white;
+  font-size: 2rem;
+}
+
+.zoom{
+  transform: scale(1.1);
+  margin: 5px;
+}
+
+.col-md-5{
+  margin: 1rem;
+  padding: 0;
+  transition: all 0.3s ease-in;
+}
+
+img{
+  display:block;
+  max-width:100%;
+  border-radius:50px;
+  border:1px solid white;
+}

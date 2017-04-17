@@ -1,0 +1,25 @@
+*{
+	box-sizing: border-box;
+}
+
+div div{
+	background-color: red;
+	width: 200px;
+	margin: 30px;
+	padding: 10px;
+}
+
+div .blanc{
+	color: red;
+	background-color: #ccc;
+	padding: 50px;
+	position: absolute;
+}
+
+.bleu{
+	color: blue;
+}
+
+.rouge{
+	color:red;
+}
