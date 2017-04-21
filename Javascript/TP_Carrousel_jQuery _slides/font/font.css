@@ -1,0 +1,18 @@
+@font-face {
+  font-family: 'Baveuse3D-Regular';
+  src: url('Baveuse3D-Regular.woff') format('woff'),
+       url('Baveuse3D-Regular.ttf') format('truetype'),
+       url('Baveuse3D-Regular.svg#Baveuse3D-Regular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'baveuse 3d';
+  src: url('baveuse 3d.eot');
+  src: url('baveuse 3d.woff2') format('woff2'),
+       url('baveuse 3d.eot?#iefix') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+

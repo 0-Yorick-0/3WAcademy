@@ -1,0 +1,23 @@
+table{
+    background: blue;
+}
+td{
+    height: 100px;
+    width: 100px;
+    border:2px solid blue;
+}
+
+td{
+    -webkit-border-radius:100%;
+    -moz-border-radius:100%;
+    border-radius:100%;
+    background: white;
+}
+
+.joueur1{
+    background: red;
+}
+
+.joueur2{
+    background: yellow;
+}

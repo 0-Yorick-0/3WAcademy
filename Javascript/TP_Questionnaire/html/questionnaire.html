@@ -11,6 +11,8 @@
     <!-- Bootstrap -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 
+    <link rel="stylesheet" href="../css/style.css">
+
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -21,7 +23,43 @@
 <body>
 <h1>TP Questionnaire</h1>
 
-    <div id="score"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-md-push-3">
+                <div class="panel" id="displayAnswer">
+                    <div class="panel-heading">
+                        <h3 class="panel-title"></h3>
+                    </div>
+                    <div class="panel-body">
+
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-body" id="question">
+
+                    </div>
+                </div>
+                <form>
+                    <div class="form-group">
+                        <label for="reponse">Votre réponse :</label>
+                        <input type="text" class="form-control" id="reponse" />
+                    </div>
+                    <button type="submit" class="btn btn-default" id="valider">Valider</button>
+
+                </form>
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col-md-6 col-md-push-6">
+                <div id="score"><p></p></div>
+                <button type="submit" class="btn btn-default" id="rejouer">Rejouer</button>
+            </div>
+        </div>
+
+    </div>
+
+
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
