@@ -11,3 +11,20 @@
     -moz-box-shadow: 10px 10px 5px -1px rgba(0,0,0,0.5);
     box-shadow: 10px 10px 5px -1px rgba(0,0,0,0.5);
 }
+
+textarea{
+    resize: none;
+}
+
+#thread{
+    margin: 2rem auto;
+    border: 1px solid lightblue;
+}
+
+.wrapper p{
+    overflow: auto;
+}
+
+.hidden{
+    display: none;
+}

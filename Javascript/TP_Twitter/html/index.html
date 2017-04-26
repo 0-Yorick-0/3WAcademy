@@ -12,23 +12,73 @@
 
     <link rel="stylesheet" href="../css/style.css">
 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
+
 </head>
 <body>
 
-<div class="container">
+<div class="row" id="inscription">
+    <div class="col-md-6 col-md-push-6">
+        <button type="button" data-toggle="modal" data-target="#modalInscription">S'inscrire</button>
+        <button type="button" data-toggle="modal" data-target="#modalConnexion">Se connecter</button>
+    </div>
+</div>
+
+<!-- Modal d'inscription-->
+<div class="modal fade" tabindex="-1" role="dialog" id="modalInscription">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Vos infos</h4>
+            </div>
+            <div class="modal-body">
+                <form id="inscriptionForm">
+                    <div class="form-group">
+                        <label for="name">Votre nom :</label>
+                        <input type="text" class="form-control" id="name" placeholder="nom...">
+                    </div>
+                    <div class="form-group">
+                        <label for="avatar">Votre avatar</label>
+                        <input type="url" class="form-control" id="avatar" placeholder="rentrez l'url de votre image">
+                    </div>
+                    <button type="submit" class="btn btn-default">Valider</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal" id="close">Close</button>
+                </form>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<!-- Modal de connexion-->
+<div class="modal fade" tabindex="-1" role="dialog" id="modalConnexion">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Vos ids</h4>
+            </div>
+            <div class="modal-body">
+                <form id="connexionForm">
+                    <div class="form-group">
+                        <label for="name">Votre nom :</label>
+                        <input type="text" class="form-control" id="nameConnexion" placeholder="nom...">
+                    </div>
+                    <button type="submit" class="btn btn-default">Valider</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal" id="closeConnexion">Close</button>
+                </form>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<div class="container hidden" id="twitter">
     <div class="row">
         <div class="col-md-6 col-md-push-3" id="saisie">
-            <h1 class="text-center">Touhitteur</h1>
-            <form>
+            <h1 class="text-center">Tuhitteur</h1>
+            <form id="twitterForm">
                 <div class="form-group">
-                    <label for="text">Votre tweet :</label>
-                    <textarea class="form-control" rows="3" id="text"></textarea>
+                    <label for="text">Votre tuhitt :</label>
+                    <textarea class="form-control" rows="3" id="text" maxlength="150"></textarea>
                 </div>
                 <span id="charCounter"></span>
                 <button type="submit" class="btn btn-default">Submit</button>
@@ -46,12 +96,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-<script type="text/javascript">
-    var user = {
-        avatar : "../img/1.jpg",
-        name : "Yorick"
-    };
-</script>
+
 <script src="../js/main.js"></script>
 </body>
 </html>
