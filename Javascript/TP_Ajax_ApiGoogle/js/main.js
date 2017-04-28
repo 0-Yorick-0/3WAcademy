@@ -38,14 +38,13 @@ function getCoord(obj){
 function initMap(obj) {
     // var uluru = {lat: -25.363, lng: 131.044};
     var map = new google.maps.Map(document.getElementById('map'), {
-        zoom: 20,
+        zoom: 15,
         center: obj
     });
     var marker = new google.maps.Marker({
         position: obj,
         map: map
     });
-    console.log(obj);
 }
 
 form.addEventListener("submit", function (e) {
@@ -58,7 +57,6 @@ form.addEventListener("submit", function (e) {
     param = encodeURI(param);
 
     ajaxGet(param, function(response){
-        console.log(response);
         switch(response.status){
             case "OK":
                 var coord = getCoord(response);

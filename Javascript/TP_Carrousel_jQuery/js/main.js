@@ -7,6 +7,9 @@ $(function(){
     var $pagination = $("#pagination");
     var nbSlides = $slides.length;
     var onProcess = false;
+    //Mise en place de l'autoplay
+    var autoPlay = false;
+    var interval;
 
     var html = "";
     for(var i = 0; i < $slides.length; i++){
@@ -65,8 +68,8 @@ $(function(){
     function goToRandSlide(){
         do{
             var indexSlideToShow = getRandomIntInclusive(0,nbSlides);
-            goToSlide(indexSlideToShow);
-        }while(indexSlideToShow !== $activeSlide.index());
+        }while(indexSlideToShow == $activeSlide.index());
+        goToSlide(indexSlideToShow);
     }
 
     $('.fa-backward').click(function(){
@@ -109,9 +112,6 @@ $(function(){
        goToSlide($(this).index());
     });
 
-    //Mise en place de l'autoplay
-    var autoPlay = false;
-    var interval;
 
     function play(){
         autoPlay = true;

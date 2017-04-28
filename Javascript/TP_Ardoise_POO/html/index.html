@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ardoise Magique</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="../css/style.css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-md-push-4">
+                    <canvas id="slate1" width="400" height="300"></canvas>
+                    <div class="tools">
+                        <!-- Effacer toute la zone de dessin -->
+                        <button class="clear"><i class="fa fa-eraser"></i></button>
+                        <!-- Sauvegarder en AJAX le dessin (BONUS) -->
+                        <button class="save"><i class="fa fa-floppy-o" aria-hidden="true"></i></button>
+                        <!-- Changer la taille du trait -->
+                        <select class="pen-size">
+                            <option value="1">fin</option>
+                            <option value="2">normal</option>
+                            <option value="4">Epais</option>
+                        </select>
+                        <!-- Changer la couleur du trait -->
+                        <div class="pen-color black" data-color="black"></div>
+                        <div class="pen-color maroon" data-color="#5C2121"></div>
+                        <div class="pen-color red" data-color="#B9121B"></div>
+                        <div class="pen-color yellow" data-color="#FFBD07"></div>
+                        <div class="pen-color green" data-color="#13B813"></div>
+                        <div class="pen-color seagreen" data-color="#029E9A"></div>
+                        <div class="pen-color blue" data-color="#0378A6"></div>
+                        <!-- Afficher le lien de téléchargement de l'image (BONUS) -->
+                        <div class="callback"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-md-push-4">
+                    <canvas id="slate2" width="400" height="300"></canvas>
+                    <div class="tools">
+                        <!-- Effacer toute la zone de dessin -->
+                        <button class="clear"><i class="fa fa-eraser"></i></button>
+                        <!-- Sauvegarder en AJAX le dessin (BONUS) -->
+                        <button class="save"><i class="fa fa-floppy-o" aria-hidden="true"></i></button>
+                        <!-- Changer la taille du trait -->
+                        <select class="pen-size">
+                            <option value="1">fin</option>
+                            <option value="2">normal</option>
+                            <option value="4">Epais</option>
+                        </select>
+                        <!-- Changer la couleur du trait -->
+                        <div class="pen-color black" data-color="black"></div>
+                        <div class="pen-color maroon" data-color="#5C2121"></div>
+                        <div class="pen-color red" data-color="#B9121B"></div>
+                        <div class="pen-color yellow" data-color="#FFBD07"></div>
+                        <div class="pen-color green" data-color="#13B813"></div>
+                        <div class="pen-color seagreen" data-color="#029E9A"></div>
+                        <div class="pen-color blue" data-color="#0378A6"></div>
+                        <!-- Afficher le lien de téléchargement de l'image (BONUS) -->
+                        <div class="callback"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <footer id="footer">
+
+
+
+    </footer>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script src="../js/Pen.class.js"></script>
+<script src="../js/Slate.class.js"></script>
+<script src="../js/Tools.class.js"></script>
+
+<script src="../js/main.js"></script>
+</body>
+</html>

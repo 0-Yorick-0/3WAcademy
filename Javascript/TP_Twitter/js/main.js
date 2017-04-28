@@ -24,10 +24,7 @@ $(function(){
        users = getUsers();
        //parcours du 
         for(let userObj of users){
-            console.log(name);
-            console.log(userObj.name);
             if(name == userObj.name){
-                console.log('trouvé');
                 return userObj;
             }
         }

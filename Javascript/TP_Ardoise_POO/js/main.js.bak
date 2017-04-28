@@ -1,0 +1,69 @@
+/**
+ * Created by wan2-11 on 27/04/17.
+ */
+"use strict";
+
+var canvas = document.getElementById('slate');
+var startLocation = {};
+var isDrawing = false;
+var context;
+//création d'un objet context possedant des proprietés pour manipuler le canvas
+context = canvas.getContext('2d');
+//couleur du trait
+context.strokeStyle = '#000';
+//épaisseur de la ligne
+context.lineWidth = 1;
+
+function getMouseLocation(e) {
+    //récupération d'un objet possédant 6 propriétés : top, left, bottom, right, width, height, permettant de le localiser
+    var canvasLocation = canvas.getBoundingClientRect();
+
+    var relativeX = e.clientX - canvasLocation.left;
+    var relativeY = e.clientY - canvasLocation.top;
+    var mouseCoord = {
+        X: relativeX,
+        Y: relativeY
+    };
+    return mouseCoord;
+}
+
+function onMouseDown(e){
+    isDrawing = true;
+    startLocation.x = getMouseLocation(e).X;
+    startLocation.y = getMouseLocation(e).Y;
+
+    //début du dessin
+    context.beginPath();
+
+    //Dessine un trait entre les coordonées x1,y1 et x2, y2
+    context.moveTo(startLocation.x, startLocation.y);
+}
+
+function stopDrawing(){
+    isDrawing = false;
+}
+
+function onMouseMove(e) {
+
+    if(isDrawing) {
+        //récupération des coord du point d'arrivé de la souris
+        var newLocation = getMouseLocation(e);
+
+        var x2 = newLocation.X;
+        var y2 = newLocation.Y;
+
+        context.lineTo(x2, y2);
+
+        //Applique les changements dans le canvas
+        context.stroke();
+    }
+
+}
+
+
+canvas.addEventListener("mousedown", onMouseDown);
+canvas.addEventListener("mouseup", stopDrawing);
+canvas.addEventListener("mouseleave", stopDrawing);
+
+
+canvas.addEventListener("mousemove", onMouseMove);
