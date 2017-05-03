@@ -11,7 +11,7 @@ function Slider(slider){
 	// - nbSlides : contient le nombre total de slides
     this.nbSlides = this.slides.length;
 	// - currentSlide : contient l'image courante (par d�faut il s'agit de la premi�re)
-    // this.currentSlide = this.slides.eq(0);
+    // this.currentSlide = this.slides.eq(0) ou 0 si null
     this.currentSlide = this.slides.eq(localStorage.getItem("slide" + this.slider.attr('id')) || 0);
 	//indexSlideToShow: contient l'index de la slide suivante
 	this.indexSlideToShow;
@@ -154,16 +154,11 @@ Slider.prototype.stop = function(){
 };
 	//- onMouseOver : Si la lecture automatique du slider est en cours alors on la met sur pause lorsque que le slider est survol�.
 Slider.prototype.onMouseOver = function(){
-	if(this.isActive){
-		this.stop();
-		this.isActive = true;
-	}
+	if(this.isActive) this.stop(), this.isActive = true;
 };
 	//- onMouseLeave : Si l'icone du bouton PLAY en mode "lecture" (symbole stop) alors on relance la lecture automatique du slider.
 Slider.prototype.onMouseLeave = function () {
-    if(this.isActive){
-        this.play();
-    }
+    if(this.isActive) this.play();
 };
 	//- randomSlide :  Sert � afficher al�atoirement une slide
 Slider.prototype.randomSlide = function(){
@@ -198,8 +193,3 @@ Slider.prototype.init = function () {
     this.slider.mouseover(this.onMouseOver.bind(this));
     this.slider.mouseleave(this.onMouseLeave.bind(this));
 };
-/*
-
-		5) Afficher par d�faut la derni�re slide consult� depuis la derni�re consultation.
-
-*/

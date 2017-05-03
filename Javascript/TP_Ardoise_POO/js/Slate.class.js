@@ -8,8 +8,10 @@ function Slate(idCanvas){
 
     //bind(this) permet de forcer la méthode à faire référence à l'objet, et non à l'élément courant
     this.canvas.addEventListener("mousedown", this.onMouseDown.bind(this));
-    this.canvas.addEventListener("mouseup", this.stopDrawing.bind(this));
-    this.canvas.addEventListener("mouseleave", this.stopDrawing.bind(this));
+    // this.canvas.addEventListener("mouseup", this.stopDrawing.bind(this));
+    // this.canvas.addEventListener("mouseleave", this.stopDrawing.bind(this));
+    //Les deux méthodes ci-dessus peuvent être combinées en une seule, comme ci-dessous
+    this.canvas.on("mouseup mouseleave", this.stopDrawing.bind(this));
     this.canvas.addEventListener("mousemove", this.onMouseMove.bind(this));
 
     this.pen = new Pen(this.context);
