@@ -161,8 +161,8 @@ var colorForm = new Vue({
         showColor: function(index){
             this.srcColor = this.colors[index].image;
         },
-        updatePrice: function(e){
-            console.log(e.target.dataset.price);
+        updatePrice: function(event) {
+            console.log(event.target.dataset.price);
         }
     }
     // computed: {

@@ -55,7 +55,8 @@
 					<div class="element" v-for="(access, index) of accessories">
 						<input	type="checkbox"
 								  name="accessories[]"
-                                  @click="updatePrice(index)"
+                                  @click="updatePrice"
+                                  :data-price="access.price"
 								  :value="access.image"
 								  v-model="accessoriesImgs">
 						<label :for="'accessory_' + index">{{ access.title }}</label>
