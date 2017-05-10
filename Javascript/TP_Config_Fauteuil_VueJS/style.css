@@ -28,7 +28,7 @@
 		font-size:1.2em;
 		}
 		.price {
-		/*float:right;*/
+		float:right;
 		}
 		input[type="checkbox"],input[type="radio"] {border: #000 1px solid ; }
 		form{

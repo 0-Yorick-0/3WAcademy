@@ -9,7 +9,7 @@
     </head>
 
     <body>
-	
+
 		<div id="container">
 			<div id="viewer">
 				<img class="loader" src="./images/loading.gif">
@@ -24,7 +24,7 @@
 				<img v-for="accessoryImg of accessoriesImgs"
 					 :src="'./images/' + accessoryImg"
 					 class="accessory">
-				
+
 
 			</div>
 
@@ -39,12 +39,11 @@
 				<div id="form_colors">
 					<div class="element" v-for="(color, index) of colors">
 						<input type="radio" name="color"
-							@change="showColor(index)"
-                           :data-price="color.price"
-							:value = "index">{{ color.title }}
+							@change="updateChairPrice"
+              v-model="srcColor"
+							:data-price="color.price"
+							:value = "color.image">{{ color.title }}
 					</div>
-
-
 				</div>
 
 				<input type="hidden" name="total" value="">
@@ -54,24 +53,23 @@
 				<div id="form_accessories">
 					<div class="element" v-for="(access, index) of accessories">
 						<input	type="checkbox"
-								  name="accessories[]"
-                                  @click="updatePrice"
-                                  :data-price="access.price"
-								  :value="access.image"
-								  v-model="accessoriesImgs">
+							name="accessories[]"
+							@click="updateAccessPrice"
+							v-model="accessoriesImgs"
+							:data-price="access.price"
+              :data-lppr="access.LPPR? 1 : 0"
+							:value="access.image">
 						<label :for="'accessory_' + index">{{ access.title }}</label>
 						<span class="price">{{ access.price }}€
-						<span v-if="access.LPPR" class="lppr">*</span>
-					</span>
+							<span v-if="access.LPPR" class="lppr">*</span>
+						</span>
 					</div>
-
-
 				</div>
 				<div id="total_area">
 					Total	(sans prise en charge) <span  class="total"><span id="total">{{ total }}</span>€ TTC</span>
 
 					<div style="clear:both;padding:2px;"></div>
-					Total si prise en charge par la sécurité sociale<span  class="total"><span id="total_bis"><!-- Mettre le total bis ICI--></span>€ TTC</span>
+					Total si prise en charge par la sécurité sociale<span  class="total"><span id="total_bis">{{ totallppr }}</span>€ TTC</span>
 
 
 				</div>

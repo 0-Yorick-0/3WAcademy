@@ -146,6 +146,7 @@ accessories = [
         price : 120
     }
 ];
+var somme = function(a, b){ return a + b;};
 
 var colorForm = new Vue({
     el :  '#container',
@@ -155,21 +156,33 @@ var colorForm = new Vue({
         srcColor: colors[0].image,
         //tableau qui sera rempli dynamiquement au fur et à mesure qu'on cliquera sur une checkbox, grâce à v-model
         accessoriesImgs : [],
-        total: 0
+        chairPrice: 0,
+        totalAccess: 0,
+        totalLPPR: 0
     },
     methods: {
-        showColor: function(index){
-            this.srcColor = this.colors[index].image;
+        updateChairPrice: function(event){
+            this.chairPrice = 0;
+            this.chairPrice = parseInt(event.target.dataset.price);
         },
-        updatePrice: function(event) {
-            console.log(event.target.dataset.price);
+        updateAccessPrice: function(event) {
+          var index = this.accessoriesImgs.indexOf(event.target.value);
+          var price = parseInt(event.target.dataset.price);
+          if (index !== -1) {
+            this.totalAccess += price;
+            if(event.target.dataset.lppr == 1) this.totalLPPR += price;
+          }else{
+            this.totalAccess -= price;
+            if(event.target.dataset.lppr == 1) this.totalLPPR -= price;
+          }
         }
+    },
+    computed:{
+      total: function(){
+        return this.totalAccess + this.chairPrice;
+      },
+      totallppr: function(){
+        return this.totalLPPR;
+      }
     }
-    // computed: {
-    //     total: function () {
-    //
-    //     }
-    // }
 });
-
-var somme = function(a, b){ return a + b;};
