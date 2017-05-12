@@ -1,0 +1,45 @@
+   
+        <form method="post" id="drawingForm">
+            <h3>Publier un nouveau dessin : </h3>
+            <div class="form-group">
+                <label for="title">Nom :</label>
+                <input type="text" class="form-control" id="title" name="title" placeholder="Titre">
+            </div>
+
+            <div class="form-group">
+                <label for="content">Description :</label>
+                <textarea rows="1" cols="10" class="form-control" id="content" name="content" placeholder="Description"></textarea>
+            </div>
+
+            <input type="hidden" name="drawing" />
+
+            <div class="row">
+                <div class="col-md-8 col-md-push-2">
+                    <canvas id="slate" width="400" height="300"></canvas>
+                    <div class="tools">
+                        <!-- Effacer toute la zone de dessin -->
+                        <button class="clear"><i class="fa fa-eraser"></i></button>
+                        <!-- Sauvegarder en AJAX le dessin (BONUS) -->
+                        <!--<button class="save"><i class="fa fa-floppy-o" aria-hidden="true"></i></button>-->
+                        <!-- Changer la taille du trait -->
+                        <select class="pen-size">
+                            <option value="1">fin</option>
+                            <option value="2">normal</option>
+                            <option value="4">Epais</option>
+                        </select>
+                        <!-- Changer la couleur du trait -->
+                        <div class="pen-color black" data-color="black"></div>
+                        <div class="pen-color maroon" data-color="#5C2121"></div>
+                        <div class="pen-color red" data-color="#B9121B"></div>
+                        <div class="pen-color yellow" data-color="#FFBD07"></div>
+                        <div class="pen-color green" data-color="#13B813"></div>
+                        <div class="pen-color seagreen" data-color="#029E9A"></div>
+                        <div class="pen-color blue" data-color="#0378A6"></div>
+                        <!-- Afficher le lien de téléchargement de l'image (BONUS) -->
+                        <div class="callback"></div>
+                    </div>
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-default">Envoyer</button>
+        </form>

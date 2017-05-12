@@ -3,17 +3,44 @@
 
 namespace Projet\Controllers;
 
+use Projet\Models\Post;
+
 class PageController {
 
+      protected $post;
+
+      public function __construct(){
+        $this->post = new Post;
+      }
+
   // @get index.php/page/{slug}
-  public function show($slug){
+			// public function show($slug){
 
-    $template = 'pages/' . $slug;
+      //   $unwanted = ['../', '%', ';'];
+      //   $title = str_replace($unwanted,'',ucfirst($slug));
 
-    include(__DIR__.'/../../ressources/views/layout.phtml');
+      //   $datas = compact('title');
+			// 	return view('pages/'.$slug, $datas);  // Si on tape l'url index.php/page/contact alors on affichera le template enfant contact.phtml contenu dans le dosser ressources/views/pages/
 
-    return ""; // Cette ligne de code sera remplacé ultérieurement et ne sert que de test.
+			// }
 
-  }
+      public function index(){
+
+        $title = 'Home';
+
+        $posts = $this->post->getAllWithAuthor();
+
+        $lastPosts = $this->post->getLast(10);
+
+        $lastDrawings = [];
+
+        foreach ($lastPosts as $post) {
+          $lastDrawings[] = $post->getDrawing_src();
+        }
+
+        $datas = compact('title', 'posts', 'lastDrawings');
+
+        return view('pages/home', $datas);
+      }
 
 }

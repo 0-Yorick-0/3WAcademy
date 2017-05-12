@@ -1,0 +1,4 @@
+<?php foreach ($users as $user): ?>
+  <a href="<?= $user->getUrlAttribute() ?>"><?= $user->getName() ?></a>
+  	<hr/>
+<?php endforeach; ?>

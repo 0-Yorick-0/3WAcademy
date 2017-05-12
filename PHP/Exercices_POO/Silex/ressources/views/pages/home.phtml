@@ -1,0 +1,30 @@
+<div id="slider" class="slider">
+
+  <?php foreach ($lastDrawings as $drawing):?>
+    <img src="<?= $drawing ?>">
+  <?php endforeach;?>
+
+</div>
+
+
+<?php foreach($posts as $post):?>
+<div class="panel panel-info">
+  <div class="panel-heading">
+    <a href="#"><strong><?= $post->getTitle() ?></strong></a>
+    <span>le 
+      <?= $post->getCreated_at() ?>
+      <em><?= $post->getContent() ?></em>, par 
+      <?= $post->getAuthor()->getName() ?>
+      <?= $post->getId() ?>
+      <?php if($post->isAuthor()):?>
+        <form method="post" action="<?= url('post/' . $post->getId() . '/delete') ?>" class="pull-right">
+          <button type="submit"><i class="fa fa-times" aria-hidden="true"></i></button>
+        </form>
+      <?php endif;?>
+    </span>
+  </div>
+  <div class="panel-body">
+    <img src="<?= $post->getDrawing_src()?>">
+  </div>
+</div>
+<?php endforeach; ?>
