@@ -1,4 +1,30 @@
-<p>Nom de l'utilisateur : <?= $user->getName() ?></p>
-<p>Date de naissance : <?= $user->getBirthday() ?></p>
+<a href="<?= url('user/' . $this->getUser()->getId() . '/edit') ?>"><p class="text-center">Modifier</p></a>
+
+
+<p>Nom de l'utilisateur : <?= $this->getUser()->getName() ?></p>
+<p>Date de naissance : <?= $this->getUser()->getBirthday() ?></p>
 
 <a href="<?= '../users' ?>">Retour à la liste</a>
+
+<?php foreach ($posts as $post) :?>
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            <a href="#"><strong><?= $post->getTitle() ?></strong></a>
+            <span>le 
+            <?= $post->getCreated_at() ?>
+            <em><?= $post->getContent() ?></em>
+            <?php if($post->isAuthor()):?>
+                <form method="post" action="<?= url('post/' . $post->getId() . '/delete') ?>" class="pull-right">
+                <button type="submit"><i class="fa fa-trash" aria-hidden="true"></i></button>
+                </form>
+                <form method="post" action="<?= url('post/' . $post->getId() . '/edit') ?>" class="pull-right">
+                <button type="submit"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
+                </form>
+            <?php endif;?>
+            </span>
+        </div>
+        <div class="panel-body">
+            <img src="<?= $post->getDrawing_src()?>">
+        </div>
+    </div>
+<?php endforeach; ?>    

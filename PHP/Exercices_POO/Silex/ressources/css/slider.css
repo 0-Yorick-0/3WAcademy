@@ -22,12 +22,15 @@ h1 {
 	border: 1px solid #000;
 	position:relative;
 	overflow: hidden;
+	-webkit-box-shadow: 10px 10px 5px -5px rgba(0,0,0,0.54);
+	-moz-box-shadow: 10px 10px 5px -5px rgba(0,0,0,0.54);
+	box-shadow: 10px 10px 5px -5px rgba(0,0,0,0.54);
 
 }
 
-.slider img:first-child{
+/*.slider img:first-child{
 	display: block;
-}
+}*/
 
 .slider img {
 

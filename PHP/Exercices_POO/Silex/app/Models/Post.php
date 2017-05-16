@@ -1,22 +1,25 @@
 <?php
 namespace Projet\Models;
 
+use Projet\Traits\HasAuthor;
+
 use System\Model;
 
 use Projet\Models\User;
 
 class Post extends Model{
 
+    use HasAuthor;
+
     const TABLE = 'posts';
 
     protected $id;
     protected $title;
     protected $content;
-    protected $author_id;
     protected $created_at;
+    protected $updated_at;
     protected $drawing_src;
     //$author sera une proprieté de la classe User, qui correspondra à l'auteur du post
-    protected $author;
 
     /**
      * @return mixed
@@ -60,34 +63,25 @@ class Post extends Model{
         return $this;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getAuthor_id()
-    {
-        return $this->author_id;
-    }
-
-    /**
-     * @param mixed $author_id
-     */
-    public function setAuthor_id($author_id)
-    {
-        $this->author_id= $author_id;
-        return $this;
-    }
-
     public function getCreated_at()
     {
         return $this->created_at;
     }
 
+    public function getUpdated_at()
+    {
+        return $this->updated_at;
+    }
+
     /**
      * @return mixed
      */
-    public function getDrawing_src()
-    {
-        return url('uploads/drawings/' . $this->drawing_src);
+    public function getDrawing_src($filename = false)
+    {   //on renverra soit le nom brut du fichier, soit son adresse complète
+        if($filename){
+            return $this->drawing_src;
+        }// on ajoute la date de maj, afin d'éviter des souci avec la mise en cache, qui peut ne pas faire la maj d'affichage'
+        return url('uploads/drawings/' . $this->drawing_src.'?update='. $this->updated_at);
     }
 
     /**
@@ -97,11 +91,6 @@ class Post extends Model{
     {
         $this->drawing_src = $drawing_src;
         return $this;
-    }
-
-    public function getAuthor()
-    {
-        return $this->author;
     }
 
     public function getAllWithAuthor(){
@@ -125,11 +114,40 @@ class Post extends Model{
             unset($value['email']);
             unset($value['birthday']);
         }
-
+        //permet de récupérer un tableau d'objets plus facile à exploiter qu'un tableau à deux dimension renvoyé par fetchAll
         return $this->getCollection($posts);
     }
 
-    public function isAuthor(){
-        return isLogged() && $this->getAuthor_id() == $_SESSION['userId'];
+    public function getOneFromAuthor($id){
+
+        $req = $this->db->queryOne('SELECT p.*, u.name, u.email, u.birthday
+                                FROM posts p
+                                INNER JOIN users u
+                                ON p.author_id = u.id
+                                WHERE p.id = ?', [$id]);
+
+
+        $datas = [
+            'name' => $req['name'],
+            'email' => $req['email'],
+            'birthday' => $req['birthday']
+            ];
+
+        $req['author'] = new User($datas);
+
+        
+
+        return $this->getInstance($req);
     }
+
+    public function getAllFromAuthor($id){
+        $posts = $this->db->query('SELECT *
+                    FROM posts 
+                    WHERE author_id = ?
+                    ORDER BY created_at DESC', [$id]);
+
+        return $this->getCollection($posts);
+        
+    }
+
 }

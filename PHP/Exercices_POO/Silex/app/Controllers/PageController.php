@@ -5,11 +5,13 @@ namespace Projet\Controllers;
 
 use Projet\Models\Post;
 
-class PageController {
+class PageController extends \System\Controller{
 
       protected $post;
 
       public function __construct(){
+        //conserve le constructeur du parent, et évite son écrasement
+        parent::__construct();
         $this->post = new Post;
       }
 
@@ -34,13 +36,14 @@ class PageController {
 
         $lastDrawings = [];
 
+
         foreach ($lastPosts as $post) {
           $lastDrawings[] = $post->getDrawing_src();
         }
 
         $datas = compact('title', 'posts', 'lastDrawings');
 
-        return view('pages/home', $datas);
+        return $this->view('pages/home', $datas);
       }
 
 }

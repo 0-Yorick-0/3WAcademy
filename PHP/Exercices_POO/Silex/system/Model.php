@@ -63,7 +63,7 @@ abstract class Model{
         $values = implode(", ", $columns);
         $variables = implode(", :", $columns);
         $db->execute('INSERT INTO ' . static::TABLE . ' (' . $values . ', created_at) VALUES (:' . $variables . ', NOW())', $this->toArray());
-        return (new User)->find($db->getPdo()->lastInsertId());
+        return (new static)->find($db->getPdo()->lastInsertId());
     }
 
     public function update(){
@@ -103,6 +103,7 @@ abstract class Model{
       $req = $this->db->queryOne('SELECT * FROM ' . static::TABLE . ' WHERE ' . $column . ' = ? ', [$value]);
       return $this->getInstance($req);
     }
+    
 
     public function getLast($number){
 

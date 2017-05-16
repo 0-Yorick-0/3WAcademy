@@ -2,6 +2,10 @@ canvas{
     box-shadow: 0 0 8px 1px #2C3E50;
 }
 
+#slate:hover{
+	cursor: url('../img/pencil.png'), pointer;
+}
+
 .container{
     margin: 10rem auto;
 }

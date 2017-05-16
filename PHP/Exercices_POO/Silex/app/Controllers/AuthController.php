@@ -4,12 +4,13 @@ namespace Projet\Controllers;
 
 use Projet\Models\User;
 
-class AuthController{
+class AuthController extends \System\Controller{
 
   protected $user;
 
   //on instancie automatiquement la classe User pour pouvoir utiliser ses proprietés sans l'instancier à chaque fois
   public function __construct(){
+      parent::__construct();
       $this->user = new User;
   }
 
@@ -24,8 +25,6 @@ class AuthController{
       extract($_POST);
 
       $birthday = $year . '-' . monthFormat($month) . '-' . $day;
-
-      $errors = [];
 
       if(strlen($name) < 3 || strlen($name) > 20){
         $errors[] = 'Le nom doît être compris entre 3 et 20 caractères';
@@ -60,7 +59,7 @@ class AuthController{
 
     $datas = compact('errors', 'title');      
 
-    return view('auth/register', $datas);
+    return $this->view('auth/register', $datas);
        
   }
 
@@ -74,18 +73,31 @@ class AuthController{
 
       extract($_POST);
 
-      $user = $this->user->findOneBy('name', $name);
+      $user = $this->user->findOneBy('name', $name);     
 
       if(!$user || !password_verify($password, $user->getPassword())){
         $errors[] = 'Le nom ou le mot de passe ne correspondent pas';
       }else{
+        if(!isset($_SESSION['csrf_token'])) $_SESSION['csrf_token'] = randString(20);
+        $_SESSION['userName'] = $user->getName();
         $_SESSION['userId'] = $user->getId();
         redirect('posts/create');
       }
-    }
+    }   
 
     $datas = compact('title', 'errors');
 
-    return view('auth/login', $datas);
+    return $this->view('auth/login', $datas);
+  }
+
+  public function signOut(){
+
+    $_SESSION = array();
+
+    unset($_SESSION['userId']);
+
+    session_destroy();
+
+    redirect('pages/home');
   }
 }

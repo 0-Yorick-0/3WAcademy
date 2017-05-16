@@ -1,0 +1,70 @@
+<div class="panel panel-info">
+  <div class="panel-heading">
+    <strong><?= htmlspecialchars($post->getTitle()) ?></strong>
+    <span>le 
+      <?= htmlspecialchars($post->getCreated_at()) ?>
+      <em><?= htmlspecialchars($post->getContent()) ?></em>, par 
+      <?= htmlspecialchars($post->getAuthor()->getName()) ?>
+      <?php if($post->isAuthor()):?>
+        <form method="post" action="<?= url('post/' . htmlspecialchars($post->getId()) . '/delete') ?>" class="pull-right">
+          <button type="submit"><i class="fa fa-trash" aria-hidden="true"></i></button>
+        </form>
+        <form method="post" action="<?= url('post/' . htmlspecialchars($post->getId()) . '/edit') ?>" class="pull-right">
+          <button type="submit"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
+        </form>
+      <?php endif;?>
+    </span>
+  </div>
+  <div class="panel-body">
+    <img src="<?= htmlspecialchars($post->getDrawing_src())?>">
+  </div>
+</div>
+
+<div class="container">
+
+    <div class="row">
+        <div class="col-md-8">
+        
+            <form method="post" action="<?= url('comment/'.$post->getId())?>">
+                <div class="form-group">
+                <label for="content">Commentaire :</label>
+                <textarea rows="1" 
+                        cols="10" 
+                        class="form-control" 
+                        id="comment" 
+                        name="content" 
+                        placeholder="Un commentaire ?"></textarea>
+                </div>
+
+                <input type="hidden" name="csrf_token" value="<?= $_SESSION['csrf_token']?>">
+
+                <button type="submit" class="btn btn-default">Envoyer</button>
+            </form>
+        </div>
+    </div>
+
+</div>
+
+<?php foreach($comments as $comment):?>
+
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            <span>
+                <strong><?= htmlspecialchars($comment->getAuthor()->getName()) ?></strong>, le 
+                <?= htmlspecialchars($comment->getCreated_at()) ?>          
+                <?php if($comment->isAuthor()):?>
+                    <form method="post" action="<?= url('post/' . htmlspecialchars($comment->getId()) . '/delete') ?>" class="pull-right">
+                    <button type="submit"><i class="fa fa-trash" aria-hidden="true"></i></button>
+                    </form>
+                    <form method="post" action="<?= url('post/' . htmlspecialchars($comment->getId()) . '/edit') ?>" class="pull-right">
+                    <button type="submit"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
+                    </form>
+            <?php endif;?>
+            </span>
+        </div>
+        <div class="panel-body">
+            <?= htmlspecialchars($comment->getContent())?>
+        </div>
+    </div>
+
+<?php endforeach;?>

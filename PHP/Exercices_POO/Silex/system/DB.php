@@ -37,8 +37,9 @@ class DB{
         return $req->fetch();
     }
 
-    public function query($sql){
-        $req = static::$pdo->query($sql);
+    public function query($sql, $values = []){
+        $req = static::$pdo->prepare($sql);
+        $req->execute($values);
         return $req->fetchAll();
     }
 

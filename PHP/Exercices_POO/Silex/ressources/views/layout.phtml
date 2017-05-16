@@ -22,8 +22,28 @@
   </head>
   <body>
 
-    <header>
-        <h1 class="text-center">Site Awesome!</h1>
+
+
+    <header class="container">
+      <div class="row">
+        <div class="pull-right">
+          <?php if (!isLogged()):?>
+            <ol class="breadcrumb">
+              <li><a href="<?= url('login')?>">Connexion</a></li>
+              <li><a href="<?= url('register')?>">Inscription</a></li>
+            </ol>
+          <?php else: ?>
+            <ol class="breadcrumb">
+              <li><a href="<?= url('user/' . $_SESSION['userId'])?>"><?= $_SESSION['userName'] ?></a></li>
+              <li><a href="<?= url('signout')?>">Déconnexion</a></li>
+            </ol>
+          <?php endif; ?>
+        </div>
+        <div class="col-md-8 col-md-push-2">
+          <a href="<?= url('pages/home')?>"><h1 class="text-center">Drawer</h1></a>
+          <a href="<?= url('posts/create')?>"><h2 class="text-center">Dessiner</h2></a>
+        </div>
+      </div>
     </header>
 
     <div class="container">

@@ -1,21 +1,21 @@
 <?php
 // app/helpers.php
 
-function view($template, $datas = []){
+// function view($template, $datas = []){
 
-    extract($datas);
+//     extract($datas);
 
-    ob_start();
+//     ob_start();
 
-    include(__DIR__ . '/../ressources/views/layout.phtml');
+//     include(__DIR__ . '/../ressources/views/layout.phtml');
 
-    $view = ob_get_contents();
+//     $view = ob_get_contents();
 
-    ob_end_clean();
+//     ob_end_clean();
 
-    return $view;
+//     return $view;
 
-}
+// }
 
 function url($uri){
 
@@ -45,10 +45,16 @@ function monthFormat($month){
 }
 
 function redirect($url){
-	header('location:' . $url);
+	header('location:' . url($url));
 	exit;
 }
 
 function isLogged(){
 	return isset($_SESSION['userId']);
+}
+
+function checkCsrf(){
+	if($_SESSION['csrf_token'] != $_POST['csrf_token']){
+		die('Espèce de vilain pirate, je t\'ai eu avec mon token !');
+	}
 }
