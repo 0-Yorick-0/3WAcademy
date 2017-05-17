@@ -18,6 +18,11 @@
   <div class="panel-body">
     <img src="<?= htmlspecialchars($post->getDrawing_src())?>">
   </div>
+  <?php if($post->getRating()):?>
+    <span class="pull-right">Note des visiteurs : <?= htmlspecialchars($post->getRating()) ?></span>
+  <?php else: ?>
+    <span class="pull-right">Pas encore de note</span>
+  <?php endif; ?>
 </div>
 
 <div class="container">
@@ -34,6 +39,15 @@
                         id="comment" 
                         name="content" 
                         placeholder="Un commentaire ?"></textarea>
+                </div>
+
+                <div class="form-group rating">
+                    <p>Noter ce dessin :</p>
+                    <input name="rating" id="e5" type="radio" value="5"><label for="e5">☆</label>
+                    <input name="rating" id="e4" type="radio" value="4"><label for="e4">☆</label>
+                    <input name="rating" id="e3" type="radio" value="3"><label for="e3">☆</label>
+                    <input name="rating" id="e2" type="radio" value="2"><label for="e2">☆</label>
+                    <input name="rating" id="e1" type="radio" value="1"><label for="e1">☆</label>             
                 </div>
 
                 <input type="hidden" name="csrf_token" value="<?= $_SESSION['csrf_token']?>">
@@ -53,16 +67,14 @@
                 <strong><?= htmlspecialchars($comment->getAuthor()->getName()) ?></strong>, le 
                 <?= htmlspecialchars($comment->getCreated_at()) ?>          
                 <?php if($comment->isAuthor()):?>
-                    <form method="post" action="<?= url('post/' . htmlspecialchars($comment->getId()) . '/delete') ?>" class="pull-right">
+                    <form method="post" action="<?= url('comment/' . htmlspecialchars($comment->getId()) . '/delete') ?>" class="pull-right">
                     <button type="submit"><i class="fa fa-trash" aria-hidden="true"></i></button>
-                    </form>
-                    <form method="post" action="<?= url('post/' . htmlspecialchars($comment->getId()) . '/edit') ?>" class="pull-right">
-                    <button type="submit"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
                     </form>
             <?php endif;?>
             </span>
         </div>
         <div class="panel-body">
+            <span class="rate" title="<?= $comment->getRating()?>/5"><?= $comment->displayStars()?></span>
             <?= htmlspecialchars($comment->getContent())?>
         </div>
     </div>

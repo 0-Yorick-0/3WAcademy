@@ -21,11 +21,12 @@ class Comment extends Model{
     protected $content;
     protected $created_at;
     protected $updated_at;
+    protected $rating;
     protected $post;
 
     /**
-     * @return mixed
-     */
+    * @return mixed
+    */
     public function getId()
     {
         return $this->id;
@@ -36,7 +37,7 @@ class Comment extends Model{
      */
     public function getPost_id()
     {
-        return $this->author_id;
+        return $this->post_id;
     }
 
     /**
@@ -75,12 +76,15 @@ class Comment extends Model{
         return $this->updated_at;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getAuthor()
+    public function getRating()
     {
-        return $this->author;
+        return $this->rating;
+    }
+
+    public function setRating($rating){
+        $this->rating = $rating;
+
+        return $this;
     }
 
     /**
@@ -91,14 +95,39 @@ class Comment extends Model{
         return $this->post;
     }
 
+    public function displayStars(){
+        $html ='';
+        for ($i=0; $i < $this->rating; $i++) { 
+            $html .= '☆';
+        }
+        return $html;
+    }
+
+    public function create($array = null){
+        parent::create();
+        $this->post = (new Post)->find($this->post_id);
+        $this->post->setNumberOfComments(1);
+        $this->post->setRating($this->rating);
+        $this->post->update();
+    }
+
+    public function delete(){
+        $this->post = (new Post)->find($this->post_id);
+        $this->post->setNumberOfComments(-1);
+        $this->post->setRating(- ($this->rating));
+        $this->post->update();
+        parent::delete();
+    }
+
     public function getPostCommentsWithAutor($post_id){
         
-        $comments = $this->db->query('SELECT c.*, u.name, u.id
+        $comments = $this->db->query('SELECT c.*, u.name
                     FROM comments c
                     INNER JOIN users u
                     ON c.author_id = u.id
                     WHERE post_id = ?
                     ORDER BY created_at DESC', [$post_id]);
+
 
                 
         foreach($comments as $key => $value){

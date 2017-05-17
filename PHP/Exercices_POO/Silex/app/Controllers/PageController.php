@@ -15,17 +15,6 @@ class PageController extends \System\Controller{
         $this->post = new Post;
       }
 
-  // @get index.php/page/{slug}
-			// public function show($slug){
-
-      //   $unwanted = ['../', '%', ';'];
-      //   $title = str_replace($unwanted,'',ucfirst($slug));
-
-      //   $datas = compact('title');
-			// 	return view('pages/'.$slug, $datas);  // Si on tape l'url index.php/page/contact alors on affichera le template enfant contact.phtml contenu dans le dosser ressources/views/pages/
-
-			// }
-
       public function index(){
 
         $title = 'Home';

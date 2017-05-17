@@ -1,0 +1,104 @@
+body{
+    font-family: 'Roboto', serif;
+}
+
+a:hover{
+    text-decoration: none;
+    color: #F26430;
+}
+
+a{
+    color: #6761A8;
+}
+
+header.container-fluid{
+    background-color: #009B72;
+    color: white;
+    padding: 5rem 15rem 1rem;
+}
+
+header.container-fluid a{
+    color: white;
+}
+
+header.container-fluid a:hover{
+    color: #F26430;
+}
+
+h1{
+    font-size: 4rem;
+    width: 20%;
+    margin: auto;
+    border-radius: 5px;
+}
+
+h1:hover{
+    background:white;
+}
+
+header.container-fluid li{
+    font-size: 3rem;
+}
+
+.panel{
+    -webkit-box-shadow: 10px 10px 5px -5px rgba(0,0,0,0.54);
+	-moz-box-shadow: 10px 10px 5px -5px rgba(0,0,0,0.54);
+	box-shadow: 10px 10px 5px -5px rgba(0,0,0,0.54);
+}
+
+.panel-info>.panel-heading{
+    background: #F26430;
+    color: #2A2D34;
+}
+
+.panel-info>.panel-heading a:first-child{
+    color: #FFFFFF;
+}
+
+.panel-info>.panel-heading a:first-child:hover{
+    color: #6761A8;
+}
+
+
+
+/*  
+    * Rating styles
+*/
+.rating {
+    overflow:hidden;
+}
+
+.rating input {
+  /*float: right;*/
+  /*permet d'effacer les radios*/
+  opacity: 0;
+  /* permet de superposer en un même point tout les radios, de sorte qu'on en voit plus qu'un*/
+  position: absolute;
+}
+
+.rating label{
+    font-size: 2rem;
+}
+
+.rating label {
+    /*les etoiles (labels) sont placées à droite, et leur ordre est inversé 
+    (pour permettre au selecteur ~ de cibler artificielement les étoiles précédant celle survolée)*/
+    float:right;
+    color: #aaa;
+    text-decoration: none;
+    -webkit-transition: color .4s;
+    -moz-transition: color .4s;
+    -o-transition: color .4s;
+    /*une transition est appliquée au changement de couleur, lors du survol*/
+    transition: color .4s;
+}
+
+/*selection de tout les frères suivant du label survolé*/
+.rating label:hover ~ label,
+/*selection de tout les frères suivant du label cliqué (ce qui permet de fixer l'état des étoiles)*/
+.rating input:focus ~ label,
+.rating label:hover
+{
+    color: orange;
+    cursor: pointer;
+}

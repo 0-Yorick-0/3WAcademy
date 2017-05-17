@@ -10,8 +10,10 @@
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link rel="stylesheet" href="<?= url('ressources/css/slate.css')?>">
     <link rel="stylesheet" href="<?= url('ressources/css/slider.css')?>">
+    <link rel="stylesheet" href="<?= url('ressources/css/main.css')?>">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -24,25 +26,27 @@
 
 
 
-    <header class="container">
+    <header class="container-fluid">
+      <a href="<?= url('pages/home')?>"><h1 class="text-center">DRAWER</h1></a>
       <div class="row">
-        <div class="pull-right">
-          <?php if (!isLogged()):?>
-            <ol class="breadcrumb">
-              <li><a href="<?= url('login')?>">Connexion</a></li>
-              <li><a href="<?= url('register')?>">Inscription</a></li>
-            </ol>
-          <?php else: ?>
-            <ol class="breadcrumb">
-              <li><a href="<?= url('user/' . $_SESSION['userId'])?>"><?= $_SESSION['userName'] ?></a></li>
-              <li><a href="<?= url('signout')?>">Déconnexion</a></li>
-            </ol>
-          <?php endif; ?>
-        </div>
-        <div class="col-md-8 col-md-push-2">
-          <a href="<?= url('pages/home')?>"><h1 class="text-center">Drawer</h1></a>
-          <a href="<?= url('posts/create')?>"><h2 class="text-center">Dessiner</h2></a>
-        </div>
+        <nav>
+          <ul class="nav nav-pills">
+            <li role="presentation"><a href="<?= url('posts/create')?>">Dessiner</a></li>
+            <?php if (!isLogged()):?>
+              <li role="presentation" class="pull-right"><a href="<?= url('login')?>">Connexion</a></li>
+              <li role="presentation" class="pull-right"><a href="<?= url('register')?>">Inscription</a></li>
+            <?php else: ?>
+
+              <li role="presentation" class="pull-right"><a href="<?= url('user/' . $_SESSION['userId'])?>"><?= $_SESSION['userName'] ?></a></li>
+              <li role="presentation" class="pull-right"><a href="<?= url('signout')?>">Déconnexion</a></li>
+
+            <?php endif; ?>
+            
+          </ul>
+        </nav>
+        <nav>
+
+        </nav>
       </div>
     </header>
 

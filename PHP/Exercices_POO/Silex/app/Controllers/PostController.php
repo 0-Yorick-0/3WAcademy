@@ -31,6 +31,10 @@ class PostController extends \System\Controller{
 
     public function create(){
 
+        if(!isLogged()){
+            redirect('pages/home');
+        }
+
         $title = 'Drawer';
 
         $post = $this->post;
@@ -58,7 +62,7 @@ class PostController extends \System\Controller{
 
         return $this->view('post/form', $datas);
     }
-
+   // post/5/delete
     public function destroy($id){
 
         $post = $this->post->find($id);

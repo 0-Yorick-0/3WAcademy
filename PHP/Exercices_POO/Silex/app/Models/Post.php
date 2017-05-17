@@ -19,8 +19,12 @@ class Post extends Model{
     protected $created_at;
     protected $updated_at;
     protected $drawing_src;
-    //$author sera une proprieté de la classe User, qui correspondra à l'auteur du post
 
+    protected $numberOfComments = 0;
+
+    protected static $numberOfRate;
+    protected $rating = 0;
+    
     /**
      * @return mixed
      */
@@ -71,6 +75,29 @@ class Post extends Model{
     public function getUpdated_at()
     {
         return $this->updated_at;
+    }
+
+    public function getNumberOfComments(){
+        return ($this->numberOfComments == null) ? 0: $this->numberOfComments;
+    }
+
+    public function setNumberOfComments($number){
+        $this->numberOfComments += $number;
+        return $this;
+    }
+
+    public function getRating(){
+        return ($this->rating == 0) ? null : $this->rating . '/5';
+    }
+
+    public function setRating($rate){
+        if($this->numberOfComments !== 0){
+            $this->rating = ($this->rating + $rate) / $this->numberOfComments;
+        }else{
+            $this->rating = 0;
+        }
+
+        return $this;
     }
 
     /**

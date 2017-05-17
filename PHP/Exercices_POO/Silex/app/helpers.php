@@ -1,22 +1,6 @@
 <?php
 // app/helpers.php
 
-// function view($template, $datas = []){
-
-//     extract($datas);
-
-//     ob_start();
-
-//     include(__DIR__ . '/../ressources/views/layout.phtml');
-
-//     $view = ob_get_contents();
-
-//     ob_end_clean();
-
-//     return $view;
-
-// }
-
 function url($uri){
 
 	return sprintf(

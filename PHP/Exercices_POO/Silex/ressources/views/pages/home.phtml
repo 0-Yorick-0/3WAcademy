@@ -28,4 +28,12 @@
     <img src="<?= htmlspecialchars($post->getDrawing_src())?>">
   </div>
 </div>
+  <p>
+  <a href="<?= url('post/' . $post->getId()) ?>">Commentaires : <span class="badge"><?= $post->getNumberOfComments()?></span></a>
+  <?php if($post->getRating()):?>
+    <span class="pull-right">Note des visiteurs : <?= htmlspecialchars($post->getRating()) ?></span>
+  <?php else: ?>
+    <span class="pull-right">Pas encore de note</span>
+  <?php endif; ?>
+  </p>
 <?php endforeach; ?>
